@@ -1,39 +1,52 @@
-% Defines the state according to the input events.
-% The state is defined by the number of state and a table of events actives
-% or inactive.
+% Finite State Machine
+% Each state is defined by the number of state and a table with one column
+% for events and other indicating if it is active (1) or not (0).
 classdef StateMachine
     properties(SetAccess=private)
         currentState
         eventsTable
         defaultEventsTable
-        switchedOffEventsInState
+        switchedOffEvents
         transitions
         inputEvents
         numberOfStates
     end
+
     methods
        function obj = StateMachine(eventsTable, switchedOffEvents, transitions)
            obj.eventsTable = eventsTable;
            obj.defaultEventsTable = eventsTable;
-           obj.switchedOffEventsInState = switchedOffEvents;
+           obj.switchedOffEvents = switchedOffEvents;
            obj.transitions = transitions;
            
            % Get number of possible states
-           obj.numberOfStates = size(obj.switchedOffEventsInState, 1);
+           obj.numberOfStates = size(obj.switchedOffEvents, 1);
            
            % Set the initial state is zero.            
-           obj = obj.setNewState(0);
+           obj = obj.setState(0);
+       end
+       
+       function obj = setEventsTable(obj, eventsTable)
+           obj.eventsTable = eventsTable;
        end
 
        function eventsTable = getEventsTable(obj)
            eventsTable = obj.eventsTable;
+       end
+       
+       function obj = setSwitchedOffEvents(obj, switchedOffEvents)
+           obj.switchedOffEvents = switchedOffEvents;
+       end
+
+       function switchedOffEvents = getSwitchedOffEvents(obj)
+           switchedOffEvents = obj.switchedOffEvents;
        end
 
        function currentState = getCurrentState(obj)
            currentState = obj.currentState;
        end
        
-       function obj = setNewEvent(obj, eventNumber)
+       function obj = setEvent(obj, eventNumber)
            % Search in the transitions matrix to get the future state
            % according to the input event.
 
@@ -49,10 +62,10 @@ classdef StateMachine
                end
            end
            obj.currentState = futureState;
-           obj.setNewState(futureState);
+           obj.setState(futureState);
        end
        
-       function obj = setNewState(obj, stateNumber)
+       function obj = setState(obj, stateNumber)
            % Update the current state and the events according to the
            % states.
            obj.currentState = stateNumber;
@@ -64,8 +77,8 @@ classdef StateMachine
            switchedOffEvents = [];
            for i = 1:obj.numberOfStates
                
-               if obj.switchedOffEventsInState{i, 1}(1) == stateNumber
-                   switchedOffEvents = obj.switchedOffEventsInState{i, 1}(2:end,1);
+               if obj.switchedOffEvents{i, 1}(1) == stateNumber
+                   switchedOffEvents = obj.switchedOffEvents{i, 1}(2:end,1);
 
                    break;
                end

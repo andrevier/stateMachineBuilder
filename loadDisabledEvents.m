@@ -8,6 +8,8 @@ function disabledEvents = loadDisabledEvents(path)
     %
     % The first number represents the state and the following numbers (e1, 
     % e2, ...), the events.
+
+    % Open the file of the path.
     fid = fopen(path);
     lines = textscan(fid, "%s", "Delimiter","\n");
     

@@ -85,21 +85,25 @@ classdef StateMachine
            end
 
            % Loop the events table to update the events.
-            a = 1;
-           for i = 1:height(obj.eventsTable) 
-               eventOfTable = obj.eventsTable.event(i);
-               eventToSwitchOff = switchedOffEvents(a,1);
-               if eventOfTable == eventToSwitchOff
-                   obj.eventsTable.isActive(i) = 0;
-                   len = size(switchedOffEvents,1);
-                   if a < len
-                       a = a + 1;
-                   else
-                       break;
-                   end
-               end
-
-           end
+           activeEvents = ~ismember(obj.eventsTable.events, switchedOffEvents);
+           obj.eventsTable.isActive = activeEvents;
+           
+%             a = 1;
+%            for i = 1:height(obj.eventsTable) 
+%                eventOfTable = obj.eventsTable.event(i);
+%                eventToSwitchOff = switchedOffEvents(a,1);
+%                if eventOfTable == eventToSwitchOff
+%                    obj.eventsTable.isActive(i) = 0;
+%                    len = size(switchedOffEvents,1);
+%                    if a < len
+%                        a = a + 1;
+%                    else
+%                        break;
+%                    end
+%                end
+% 
+%            end
+          
        end
      
        

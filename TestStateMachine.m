@@ -2,7 +2,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
 
     methods(Test)
 
-        function testSetState(testCase)
+        function testSetState(testCase)                                    % test
 
             utils = StateMachineUtils;
 
@@ -24,7 +24,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             % Asserts that state 1.
             event = [1;3;11;12;13;14;16;21;23;25;27;31;32;33;34;36;41;43;51;52;54;56;58;61;63];
             % 1:   1   11   13   23   25   27   31   33   41   51   61
-            isActive = [1;1;0;1;0;1;1;1;0;0;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1];
+            isActive = [0;1;0;1;0;1;1;1;0;0;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1];
            
             expectedEventsTable = table(event, isActive);
             

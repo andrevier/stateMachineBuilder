@@ -1,6 +1,7 @@
 classdef TestStateMachineUtils < matlab.unittest.TestCase
     methods(Test)
-        function testReadEvents(testCase)
+        function testReadEvents(testCase)                                  %check
+            % Test read the txt file with all events
             data = StateMachineUtils;
             data = data.readAllEvents('resources/allevents.txt');
             
@@ -13,7 +14,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
 
         end
 
-        function testCreateEventsTable(testCase)
+        function testCreateEventsTable(testCase)                           % check
             % Test if the table of events is created.
             data = StateMachineUtils;
             data = data.readAllEvents('resources/allevents.txt');
@@ -27,7 +28,8 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             testCase.verifyEqual(eventsTable, exp.eventsTable);
         end
 
-        function testReadTransitions(testCase)
+        function testReadTransitions(testCase)                             % check
+            % Test if the transitions matrix is created.
             data = StateMachineUtils;
             data = data.readTransitions('resources/transitions.txt');
             
@@ -39,7 +41,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             testCase.verifyEqual(transitions, exp.transitions);
         end
         
-        function testReadSwitchedOffEvents(testCase)
+        function testReadSwitchedOffEvents(testCase)                       % check
             data = StateMachineUtils;
             data = data.readSwitchedOffEvents('resources/switchedOffEvents.csv');
             

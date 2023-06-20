@@ -16,7 +16,7 @@ classdef StateMachineUtils
 
     methods
        
-        function obj = readAllEvents(obj, allEventsPath)
+        function obj = readAllEvents(obj, allEventsPath)                   % check
             % Read the file containing all possible events and return an 
             % array nx1 of the number of events (int32) in the order of
             % reading.
@@ -40,7 +40,7 @@ classdef StateMachineUtils
             eventsArray = obj.eventsArray;
         end
 
-        function obj = createEventsTable(obj)
+        function obj = createEventsTable(obj)                              % check
             % Create an event table with two columns. The first is for the
             % events and the second, to check if these event is active or
             % not.

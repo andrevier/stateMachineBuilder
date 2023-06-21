@@ -1,9 +1,16 @@
 clc;clear;
-%path = 'resources/DATA_SIMSUP1.PDT';
-%path = 'resources/DATA_SIMSUP1_MG1.PDT';
-% path =  'resources/DATA_SIMSUP2_MG1.PDT';
-% switchOffEvents = loadDisabledEvents(path);
 
-path = 'resources/SIMSUP1_MG1.ADS';
-transitions = loadTransitions(path);
-disp(transitions)
+utils = StateMachineUtils;
+
+utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+utils = utils.createEventsTable();
+
+utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+
+utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+
+stateMachine = StateMachine( ...
+    utils.getEventsTable(), ...
+    utils.getSwitchedOffEvents(), ...
+    utils.getTransitions());
+

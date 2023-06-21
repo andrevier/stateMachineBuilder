@@ -3,7 +3,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         function testReadEvents(testCase)                                  %check
             % Test read the txt file with all events
             data = StateMachineUtils;
-            data = data.readAllEvents('resources/allevents.txt');
+            data = data.readAllEvents('resources/other/allevents.txt');
             
             % When:
             eventsArray = data.getEventsArray();
@@ -27,7 +27,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         function testCreateEventsTable(testCase)                           % check
             % Test if the table of events is created.
             data = StateMachineUtils;
-            data = data.readAllEvents('resources/allevents.txt');
+            data = data.readAllEvents('resources/other/allevents.txt');
             
             % When 
             data = data.createEventsTable();           
@@ -40,7 +40,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         
         function testLoadTransitionsInPds(testCase)
             utils = StateMachineUtils;
-            utils = utils.loadTransitionsInAds('resources/SIMSUP1_MG1.ADS');
+            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
 
             % Asserts that
             exp = load("test/transitions.mat");
@@ -51,7 +51,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         function testReadTransitions(testCase)                             % check
             % Test if the transitions matrix is created.
             data = StateMachineUtils;
-            data = data.readTransitions('resources/transitions.txt');
+            data = data.readTransitions('resources/other/transitions.txt');
             
             % When
             transitions = data.getTransitions();
@@ -63,7 +63,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
 
         function testLoadDisabledEvents(testCase)
             data = StateMachineUtils;
-            data = data.loadDisabledEventsInPdt('resources/DATA_SIMSUP1_MG1.PDT');
+            data = data.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
             
             % When
             switchedOffEvents = data.getSwitchedOffEvents();
@@ -81,7 +81,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         
         function testReadSwitchedOffEvents(testCase)                       % check
             data = StateMachineUtils;
-            data = data.readSwitchedOffEvents('resources/switchedOffEvents.csv');
+            data = data.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
             
             % When
             switchedOffEvents = data.getSwitchedOffEvents();

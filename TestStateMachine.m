@@ -6,12 +6,12 @@ classdef TestStateMachine < matlab.unittest.TestCase
 
             utils = StateMachineUtils;
 
-            utils = utils.readAllEvents('resources/allevents.txt');
+            utils = utils.readAllEvents('resources/other/allevents.txt');
             utils = utils.createEventsTable();
 
-            utils = utils.readSwitchedOffEvents('resources/switchedOffEvents.csv');
+            utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
 
-            utils = utils.readTransitions('resources/transitions.txt');
+            utils = utils.readTransitions('resources/other/transitions.txt');
 
             state = StateMachine( ...
                 utils.getEventsTable(), ...
@@ -84,9 +84,9 @@ classdef TestStateMachine < matlab.unittest.TestCase
             utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
             utils = utils.createEventsTable();
 
-            utils = utils.loadDisabledEventsInPdt('resources/DATA_SIMSUP1_MG1.PDT');
+            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.loadTransitionsInAds('resources/SIMSUP1_MG1.ADS');
+            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
 
             state = StateMachine( ...
                 utils.getEventsTable(), ...
@@ -111,12 +111,12 @@ classdef TestStateMachine < matlab.unittest.TestCase
         function testDefaultState(testCase)
             utils = StateMachineUtils;
 
-            utils = utils.readAllEvents('resources/allevents.txt');
+            utils = utils.readAllEvents('resources/other/allevents.txt');
             utils = utils.createEventsTable();
 
-            utils = utils.readSwitchedOffEvents('resources/switchedOffEvents.csv');
+            utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
 
-            utils = utils.readTransitions('resources/transitions.txt');
+            utils = utils.readTransitions('resources/other/transitions.txt');
 
             state = StateMachine( ...
                 utils.getEventsTable(), ...
@@ -139,12 +139,12 @@ classdef TestStateMachine < matlab.unittest.TestCase
         function testSetEvent(testCase)
             utils = StateMachineUtils;
 
-            utils = utils.readAllEvents('resources/allevents.txt');
+            utils = utils.readAllEvents('resources/other/allevents.txt');
             utils = utils.createEventsTable();
 
-            utils = utils.readSwitchedOffEvents('resources/switchedOffEvents.csv');
+            utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
 
-            utils = utils.readTransitions('resources/transitions.txt');
+            utils = utils.readTransitions('resources/other/transitions.txt');
 
             state = StateMachine( ...
                 utils.getEventsTable(), ...

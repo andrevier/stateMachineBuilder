@@ -76,6 +76,37 @@ classdef TestStateMachine < matlab.unittest.TestCase
             testCase.verifyEqual(state.getEventsTable, expectedEventsTable);
 
         end
+        
+        function testSetStateWithDataFromTctFiles(testCase)
+            % Test using the TCT auto-generated files.
+            utils = StateMachineUtils;
+
+            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+            utils = utils.createEventsTable();
+
+            utils = utils.loadDisabledEventsInPdt('resources/DATA_SIMSUP1_MG1.PDT');
+
+            utils = utils.loadTransitionsInAds('resources/SIMSUP1_MG1.ADS');
+
+            state = StateMachine( ...
+                utils.getEventsTable(), ...
+                utils.getSwitchedOffEvents(), ...
+                utils.getTransitions());
+            
+            % When
+            state = state.setState(1);
+            
+            % Asserts that state 1.
+            event = int32([1;3;11;12;13;14;16;21;23;25;27;31;32;33;34;36;41;43;51;52;54;56;58;61;63]);
+            % 1:   1   11   13   23   25   27   31   33   41   51   61
+            isActive = int32([0;1;0;1;0;1;1;1;0;0;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
+            
+            expectedEventsTable = table(event, isActive);
+            
+            testCase.verifyEqual(state.getCurrentState, 1);
+            testCase.verifyEqual(state.getEventsTable, expectedEventsTable);
+
+        end
 
         function testDefaultState(testCase)
             utils = StateMachineUtils;

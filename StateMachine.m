@@ -68,7 +68,7 @@ classdef StateMachine
 
             [row, ~] = ismember(obj.transitions(:, 1:2), stateEventPair, 'rows');
 
-            futureState = obj.transitions(row,3);
+            futureState = obj.transitions(row, 3);
 
             % Then, substitute the current state by the future.
             obj.currentState = futureState;

@@ -14,6 +14,16 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
 
         end
 
+        function testLoadEventsFromAds(testCase)
+            % Test read the txt file with all events
+            data = StateMachineUtils;
+            data = data.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+            
+            % Asserts that
+            exp = load("test/expectedEvents.mat");
+            testCase.assertEqual(data.getEventsArray(), exp.expectedEvents);
+        end
+
         function testCreateEventsTable(testCase)                           % check
             % Test if the table of events is created.
             data = StateMachineUtils;
@@ -27,6 +37,16 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             exp = load('test/expectedEventsTable.mat');
             testCase.verifyEqual(eventsTable, exp.eventsTable);
         end
+        
+        function testLoadTransitionsInPds(testCase)
+            utils = StateMachineUtils;
+            utils = utils.loadTransitionsInAds('resources/SIMSUP1_MG1.ADS');
+
+            % Asserts that
+            exp = load("test/transitions.mat");
+            testCase.verifyEqual(utils.getTransitions, exp.transitions);
+
+        end
 
         function testReadTransitions(testCase)                             % check
             % Test if the transitions matrix is created.
@@ -39,6 +59,24 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             % Asserts that
             exp = load("test/transitions.mat");
             testCase.verifyEqual(transitions, exp.transitions);
+        end
+
+        function testLoadDisabledEvents(testCase)
+            data = StateMachineUtils;
+            data = data.loadDisabledEventsInPdt('resources/DATA_SIMSUP1_MG1.PDT');
+            
+            % When
+            switchedOffEvents = data.getSwitchedOffEvents();
+
+            % Asserts that
+            exp = load('test/switchedOffEvents.mat');
+            
+            % state 0
+            actual = switchedOffEvents{1,1};
+            expected = exp.switchedOffEvents{1,1};
+            
+            testCase.verifyEqual(actual, expected);
+            
         end
         
         function testReadSwitchedOffEvents(testCase)                       % check

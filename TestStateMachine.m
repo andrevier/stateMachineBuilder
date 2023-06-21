@@ -165,5 +165,37 @@ classdef TestStateMachine < matlab.unittest.TestCase
             testCase.verifyEqual(state.getCurrentState, int32(2));
             testCase.verifyEqual(state.getEventsTable, expectedEventsTable);
         end
+
+        function testSetEventWithTctFiles(testCase)
+            utils = StateMachineUtils;
+
+            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+            utils = utils.createEventsTable();
+
+            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+
+            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+
+            state = StateMachine( ...
+                utils.getEventsTable(), ...
+                utils.getSwitchedOffEvents(), ...
+                utils.getTransitions());
+
+            % When receive event 36 as input.
+            state = state.setEvent(36);
+
+            % Asserts that the state is 2.
+            event = int32([1;3;11;12;13;14;16;21;23;25;27;31;32;33;34;36;41;43;51;52;54;56;58;61;63]);
+            % 2:   1   11   13   21   27   31   33   41   51   61
+            isActive = int32([0;1;0;1;0;1;1;0;1;1;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
+
+            expectedEventsTable = table(event, isActive);
+
+
+            testCase.verifyEqual(state.getCurrentState, int32(2));
+            testCase.verifyEqual(state.getEventsTable, expectedEventsTable);
+        end
+
+
     end
 end

@@ -3,15 +3,23 @@ To-do:
 1) Preset the data for the state machine in the model workspace of the 
 'testModel.xls'. (x)
 
-2) Divide the eventsTable variable in the input of the StateMachine class
- as eventsArray and activeEvents. Simulink doesn't support table.
-- Inputs for a StateMachine class:
-      events (array nx1);
-      disabledEventsInEachStates (struct);
-      transitions (nx3).
+2) Change the input for StateMachine class.
 
-3) Consider change the cell switchedOffEvents into several arrays of 
-different values. Seems that simulink doens't support cell arrays as input.
-Struct seems good for it.
+The StateMachine class required table variable as input argument, but 
+Simulink doesn't accept this type as input for the Matlab function block. 
+Therefore, the StateMachine class now accepts: 
+events (array nx1);
+disabledEventsInEachStates (cell array);
+transitions (array nx3);
+
+3) Change the input for StateMachine class.
+
+The StateMachine class required cell array as input argument, but 
+Simulink doesn't accept this type as input for the Matlab function block. 
+Therefore, the StateMachine class now accepts: 
+events (array nx1);
+disabledEventsInEachStates (struct array);
+transitions (array nx3);
+
 
 

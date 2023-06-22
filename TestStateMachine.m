@@ -1,8 +1,32 @@
 classdef TestStateMachine < matlab.unittest.TestCase
 
     methods(Test)
+        function testSetState(testCase)
+            s0 = State(0, 's0', [1, 1, 0, 0]);
+            s1 = State(1, 's1', [1, 0, 0, 0]);
+            s2 = State(2, 's2', [1, 1, 1, 0]);
+            eventsArray = [1, 2, 3, 4];
+            transitions = [0, 1, 0; 0, 2, 1; 1, 3, 2];
 
-        function testSetState(testCase)                                    % test
+            stateMachine = StateMachine([s0, s1, s2], transitions, eventsArray);
+            s = stateMachine.getCurrentState();
+            
+            % Asserts that the default state is 0.
+            testCase.verifyEqual(s.number, 0);
+            testCase.verifyEqual(s.activeEvents, [1, 1, 0, 0]);
+
+            % Set state to 1.
+            stateMachine = stateMachine.setState(1);
+
+            s = stateMachine.getCurrentState();
+
+            % Asserts that the default state is 1.
+            testCase.verifyEqual(s.number, 1);
+            testCase.verifyEqual(s.activeEvents, [1, 0, 0, 0]);
+
+        end
+
+        function testSetStateFromFiles(testCase)                                    % test
 
             utils = StateMachineUtils;
 

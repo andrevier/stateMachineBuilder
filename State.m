@@ -1,5 +1,5 @@
 classdef State 
-    properties
+    properties(SetAccess=private)
         number
         name
         activeEvents

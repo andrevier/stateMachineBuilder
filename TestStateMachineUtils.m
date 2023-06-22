@@ -125,5 +125,30 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             
             testCase.verifyEqual(actual, expected);
         end
+
+        function testCreateStatesArrayWithFiles(testCase)
+            utils = StateMachineUtils;
+
+            utils = utils.readAllEvents('resources/other/allevents.txt');
+            
+            utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
+
+            utils = utils.readTransitions('resources/other/transitions.txt');
+
+            utils = utils.createStatesCell();
+
+            actualStateCell = utils.getStatesCell();
+
+            expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;1;1;0;1]);
+            
+            expectedState = State(0, 's0', expectedActiveEvents);
+            
+            % Match state 0.
+            testCase.assertEqual(actualStateCell{1}.getNumber(), expectedState.getNumber());
+            testCase.assertEqual(actualStateCell{1}.getName(), expectedState.getName());
+            testCase.assertEqual(actualStateCell{1}.getActiveEvents(), expectedState.getActiveEvents);
+            
+        end
     end
+    
 end

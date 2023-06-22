@@ -10,6 +10,7 @@ classdef StateMachineUtils
         eventsArray
         eventsTable
         transitions
+        statesCell
         switchedOffEvents
     end
 
@@ -67,18 +68,18 @@ classdef StateMachineUtils
             eventsArray = obj.eventsArray;
         end
 
-        function obj = createEventsTable(obj)                              % check
-            % Create an event table with two columns. The first is for the
-            % events and the second, to check if these event is active or
-            % not.
-            event = obj.eventsArray;
-            isActive = ones(obj.getNumberOfEvents, 1);
-            obj.eventsTable = table(event, isActive);
-        end
+%         function obj = createEventsTable(obj)                              % check
+%             % Create an event table with two columns. The first is for the
+%             % events and the second, to check if these event is active or
+%             % not.
+%             event = obj.eventsArray;
+%             isActive = ones(obj.getNumberOfEvents, 1);
+%             obj.eventsTable = table(event, isActive);
+%         end
         
-        function eventsTable = getEventsTable(obj)
-            eventsTable = obj.eventsTable;
-        end
+%         function eventsTable = getEventsTable(obj)
+%             eventsTable = obj.eventsTable;
+%         end
         
         function numberOfEvents = getNumberOfEvents(obj)
             numberOfEvents = size(obj.eventsArray, 1);
@@ -129,9 +130,7 @@ classdef StateMachineUtils
                 
                 j = j + 1;
             end
-            fclose(fid);
-            
-        
+            fclose(fid);        
         end 
 
         function transitions = getTransitions(obj)
@@ -215,7 +214,38 @@ classdef StateMachineUtils
         function switchedOffEvents = getSwitchedOffEvents(obj)
             switchedOffEvents = obj.switchedOffEvents;
         end
-    end
+
+        function obj = createStatesCell(obj)
+            statesCells = cell(numel(obj.switchedOffEvents), 1);
+
+            % Loop the switchedOffEvents to create an array of states.
+            for i = 1:numel(obj.switchedOffEvents)
+                stateNumber = obj.switchedOffEvents{i}(1); 
+                stateName = "s" + num2str(stateNumber);
+                
+                % Extract the array of active events in the state.
+                matchedEvents = ismember(obj.eventsArray, obj.switchedOffEvents{i}(2:end));
+                activeEvents = ~matchedEvents;
+                
+                statesCells{i, 1} = State(stateNumber, stateName, activeEvents);
+            end
+            obj.statesCell = statesCells;
+        end
+        
+        function statesCell = getStatesCell(obj)
+            statesCell = obj.statesCell;
+        end
+
+        function disabledEventsArray = parseStatesCellToArray(obj)
+            % Encode the cell with States into an array 2D. 
+            disabledEventsArray = zeros(numel(obj.statesCell), 1 + numel(obj.eventsArray));
+            for i = 1:numel(obj.statesCell)
+                stateNumber = [obj.statesCell{i}.getNumber()];
+                activeEvents = [obj.statesCell{i}.getActiveEvents()];
+                disabledEventsArray(i, :) = [stateNumber, activeEvents];
+            end
+        end
+    end    
 
     methods(Static)
         function numberOflines = getNumberOfLines(path)
@@ -230,6 +260,6 @@ classdef StateMachineUtils
                 numberOflines = numberOflines + 1;
             end
             fclose(fid);
-        end        
+        end
     end    
 end

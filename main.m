@@ -2,15 +2,11 @@ clc;clear;
 
 utils = StateMachineUtils;
 
-utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
-utils = utils.createEventsTable();
+utils = utils.readAllEvents('resources/other/allevents.txt');
 
-utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
 
-utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+utils = utils.readTransitions('resources/other/transitions.txt');
+utils = utils.createStatesCell();
 
-stateMachine = StateMachine( ...
-    utils.getEventsTable(), ...
-    utils.getSwitchedOffEvents(), ...
-    utils.getTransitions());
-
+statesCell = utils.getStatesCell();

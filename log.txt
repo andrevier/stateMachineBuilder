@@ -17,8 +17,7 @@ transitions (array nx3);
 The StateMachine class required cell array as input argument, but 
 Simulink doesn't accept this type as input for the Matlab function block. 
 Therefore, the StateMachine class now accepts: 
-events (array nx1);
-disabledEventsInEachStates (struct array);
+list of states (nx1 State array);
 transitions (array nx3);
 
 

@@ -4,25 +4,26 @@
 classdef StateMachine
     properties(SetAccess=private)
         currentState
-        eventsTable
-        defaultEventsTable
+        allEventsArray
+        activeEvents
+        defaulActiveEvents
         switchedOffEvents
         transitions
-        inputEvents
         numberOfStates
     end
 
     methods
-        function obj = StateMachine(eventsTable, switchedOffEvents, transitions)
-            event = int32(eventsTable.event);
-            isActive = int32(eventsTable.isActive);
-
-            obj.eventsTable = table(event, isActive);
-            obj.defaultEventsTable = obj.eventsTable;
-
+        function obj = StateMachine( ...
+                eventsArray, switchedOffEvents, transitionsArray)
+            
+            obj.allEventsArray = eventsArray;
+            % obj.eventsTable = table(eventsArray, activeEvents);
+            obj.defaulActiveEvents = ones(numel(eventsArray), 1);
+            
+            obj.activeEvents = ones(numel(eventsArray), 1);
             obj.switchedOffEvents = switchedOffEvents;
 
-            obj.transitions = int32(transitions);
+            obj.transitions = transitionsArray;
 
             % Get number of possible states
             obj.numberOfStates = size(obj.switchedOffEvents, 1);
@@ -31,12 +32,16 @@ classdef StateMachine
             obj = obj.setState(0);
         end
 
-        function obj = setEventsTable(obj, eventsTable)
-            obj.eventsTable = eventsTable;
+        function obj = setEventsArray(obj, eventsArray)
+            obj.allEventsArray = eventsArray;
         end
 
-        function eventsTable = getEventsTable(obj)
-            eventsTable = obj.eventsTable;
+        function eventsArray = getEventsArray(obj)
+            eventsArray = obj.allEventsArray;
+        end
+
+        function activeEvents = getActiveEvents(obj)
+            activeEvents = obj.activeEvents;
         end
 
         function obj = setSwitchedOffEvents(obj, switchedOffEvents)
@@ -56,7 +61,7 @@ classdef StateMachine
         end
 
         function obj = setTransitions(obj, transitions)
-            obj.transitions = int32(transitions);
+            obj.transitions = transitions;
         end
 
         function obj = setEvent(obj, eventNumber)
@@ -83,7 +88,7 @@ classdef StateMachine
             obj.currentState = stateNumber;
 
             % Reset the events table.
-            obj.eventsTable = obj.defaultEventsTable;
+            obj.activeEvents = obj.defaulActiveEvents;
 
             % Get all the events that are inactive in the state.
             inactiveEventsinState = [];
@@ -91,20 +96,16 @@ classdef StateMachine
 
                 if obj.switchedOffEvents{i, 1}(1) == stateNumber
                     inactiveEventsinState = obj.switchedOffEvents{i, 1}(2:end,1);
-
                     break;
                 end
             end
 
             % Compare the full events array with the inactive events for
             % the state. Then, the matched events are substituted by 0
-            % (int32) because the will be inactive in this state and the 
+            % because they are inactive in this state and the 
             % unmatched ones are 1 and remain active in this state.
-            matchedEvents = ismember(obj.eventsTable.event, inactiveEventsinState);
-            obj.eventsTable.isActive = int32(~matchedEvents);
-            
+            matchedEvents = ismember(obj.allEventsArray, inactiveEventsinState);
+            obj.activeEvents = ~matchedEvents;            
         end
-
-
     end
 end

@@ -14,11 +14,27 @@ transitions (array nx3);
 
 3) Change the input for StateMachine class.
 
+Create a repository to these changes: changeStateMachine.
+
 The StateMachine class required cell array as input argument, but 
-Simulink doesn't accept this type as input for the Matlab function block. 
-Therefore, the StateMachine class now accepts: 
+Simulink doesn't accept this type as input for the 'Matlab function block'. 
+Therefore, the StateMachine class is changed to accept in the contructor: 
 list of states (nx1 State array);
 transitions (array nx3);
 
+23/06/23
 
+1) Update StateMachineUtils.
 
+This class has the purpose to read data from auto-generated files or user 
+made files and transform it into arguments to initialize StateMachine class.
+Then, it has to create:
+- list of States class objects;
+- transitions array;
+- events array.
+
+2) Create a unique read method for the documents.
+Their name is like loadSomethingFrom(path, format);
+
+3) getter and setter methods must be changed:
+https://www.mathworks.com/help/matlab/matlab_oop/property-set-methods.html

@@ -1,16 +1,14 @@
 % Utility class to load the data from the resources. Then, generates:
-%  * eventsTable: A table with all events for the state machine;
-%  * switchedOffEvents: A cell array with all the switched off events in 
-%    the state;
-%  * transitions: A matrix containing information about all transitions in
-%  with the events.
+% - list of States class objects;
+% - transitions array: A matrix containing information about all transitions in
+%  with the events;
+% - events array: An array with all the events number.
 classdef StateMachineUtils
 
     properties(SetAccess=private)
         eventsArray
-        eventsTable
         transitions
-        statesCell
+        statesArray
         switchedOffEvents
     end
 
@@ -215,8 +213,10 @@ classdef StateMachineUtils
             switchedOffEvents = obj.switchedOffEvents;
         end
 
-        function obj = createStatesCell(obj)
-            statesCells = cell(numel(obj.switchedOffEvents), 1);
+        function obj = createStatesArray(obj)
+            % Creates an array of State objects and fills the data from 
+            % statesCells = cell(numel(obj.switchedOffEvents), 1);
+            obj.statesArray = State.empty(numel(obj.switchedOffEvents), 0);
 
             % Loop the switchedOffEvents to create an array of states.
             for i = 1:numel(obj.switchedOffEvents)
@@ -227,23 +227,16 @@ classdef StateMachineUtils
                 matchedEvents = ismember(obj.eventsArray, obj.switchedOffEvents{i}(2:end));
                 activeEvents = ~matchedEvents;
                 
-                statesCells{i, 1} = State(stateNumber, stateName, activeEvents);
+                obj.statesArray(i) = State(stateNumber, stateName, activeEvents);
             end
-            obj.statesCell = statesCells;
+            
         end
         
-        function statesCell = getStatesCell(obj)
-            statesCell = obj.statesCell;
-        end
-
-        function disabledEventsArray = parseStatesCellToArray(obj)
-            % Encode the cell with States into an array 2D. 
-            disabledEventsArray = zeros(numel(obj.statesCell), 1 + numel(obj.eventsArray));
-            for i = 1:numel(obj.statesCell)
-                stateNumber = [obj.statesCell{i}.getNumber()];
-                activeEvents = [obj.statesCell{i}.getActiveEvents()];
-                disabledEventsArray(i, :) = [stateNumber, activeEvents];
+        function statesArray = getStatesArray(obj)
+            if isempty(obj.statesArray)
+                obj.statesArray = obj.createStatesArray();
             end
+            statesArray = obj.statesArray;
         end
     end    
 

@@ -23,20 +23,6 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             exp = load("test/expectedEvents.mat");
             testCase.assertEqual(data.getEventsArray(), exp.expectedEvents);
         end
-
-        function testCreateEventsTable(testCase)                           % check
-            % Test if the table of events is created.
-            data = StateMachineUtils;
-            data = data.readAllEvents('resources/other/allevents.txt');
-            
-            % When 
-            data = data.createEventsTable();           
-            eventsTable = data.getEventsTable();
-            
-            % Assert equal
-            exp = load('test/expectedEventsTable.mat');
-            testCase.verifyEqual(eventsTable, exp.eventsTable);
-        end
         
         function testLoadTransitionsInPds(testCase)
             utils = StateMachineUtils;
@@ -129,24 +115,24 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         function testCreateStatesArrayWithFiles(testCase)
             utils = StateMachineUtils;
 
-            utils = utils.readAllEvents('resources/other/allevents.txt');
+            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
             
-            utils = utils.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
+            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.readTransitions('resources/other/transitions.txt');
+            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
 
-            utils = utils.createStatesCell();
-
-            actualStateCell = utils.getStatesCell();
+            actualStateArray = utils.getStatesArray();
 
             expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;1;1;0;1]);
             
-            expectedState = State(0, 's0', expectedActiveEvents);
+            expectedState = State(0, "s0", expectedActiveEvents);
             
             % Match state 0.
-            testCase.assertEqual(actualStateCell{1}.getNumber(), expectedState.getNumber());
-            testCase.assertEqual(actualStateCell{1}.getName(), expectedState.getName());
-            testCase.assertEqual(actualStateCell{1}.getActiveEvents(), expectedState.getActiveEvents);
+            testCase.assertEqual(actualStateArray(1).getNumber(), expectedState.getNumber());
+            testCase.assertEqual(actualStateArray(1).getName(), expectedState.getName());
+            testCase.assertEqual(actualStateArray(1).getActiveEvents(), expectedState.getActiveEvents);
+
+            testCase.assertEqual(numel(actualStateArray), 6);
             
         end
     end

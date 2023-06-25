@@ -5,11 +5,13 @@
 % - events array: An array with all the events number.
 classdef StateMachineUtils
 
-    properties(SetAccess=private)
-        eventsArray
-        transitions
-        statesArray
-        switchedOffEvents
+    properties
+        eventsArray int32
+        transitions int32
+        statesArray State
+        switchedOffEvents cell
+        numberOfEvents int32
+        numberOfStates int32
     end
 
     methods
@@ -19,7 +21,7 @@ classdef StateMachineUtils
             % array nx1 of the number of events (int32) in the order of
             % reading.           
 
-            size = StateMachineUtils.getNumberOfLines(allEventsPath);
+            size = StateMachineUtils.calcNumberOfLines(allEventsPath);
             obj.eventsArray = zeros(size,1);
             
             fid = fopen(allEventsPath);
@@ -62,24 +64,11 @@ classdef StateMachineUtils
             obj.eventsArray = allEvents;
         end
 
-        function eventsArray = getEventsArray(obj)
+        function eventsArray = get.eventsArray(obj)
             eventsArray = obj.eventsArray;
         end
-
-%         function obj = createEventsTable(obj)                              % check
-%             % Create an event table with two columns. The first is for the
-%             % events and the second, to check if these event is active or
-%             % not.
-%             event = obj.eventsArray;
-%             isActive = ones(obj.getNumberOfEvents, 1);
-%             obj.eventsTable = table(event, isActive);
-%         end
         
-%         function eventsTable = getEventsTable(obj)
-%             eventsTable = obj.eventsTable;
-%         end
-        
-        function numberOfEvents = getNumberOfEvents(obj)
+        function numberOfEvents = get.numberOfEvents(obj)
             numberOfEvents = size(obj.eventsArray, 1);
         end
 
@@ -131,7 +120,7 @@ classdef StateMachineUtils
             fclose(fid);        
         end 
 
-        function transitions = getTransitions(obj)
+        function transitions = get.transitions(obj)
             transitions = obj.transitions;
         end
 
@@ -184,6 +173,7 @@ classdef StateMachineUtils
             end
 
             obj.switchedOffEvents = disabledEvents;
+            obj.numberOfStates = size(obj.switchedOffEvents, 1);
         end
 
         function obj = readSwitchedOffEvents(obj, path)
@@ -197,8 +187,8 @@ classdef StateMachineUtils
             fid = fopen(path);
             line = fgetl(fid);
             i = 1;
-            numberOfState = StateMachineUtils.getNumberOfLines(path);
-            obj.switchedOffEvents = cell(numberOfState,1);
+            obj.numberOfStates = StateMachineUtils.calcNumberOfLines(path);
+            obj.switchedOffEvents = cell(obj.numberOfStates,1);
             while ischar(line)
                 m = textscan(line, '%d', 'Delimiter', ',');
                 obj.switchedOffEvents{i,1} = m{1};
@@ -209,17 +199,13 @@ classdef StateMachineUtils
             fclose(fid);
         end
 
-        function switchedOffEvents = getSwitchedOffEvents(obj)
-            switchedOffEvents = obj.switchedOffEvents;
-        end
-
-        function obj = createStatesArray(obj)
-            % Creates an array of State objects and fills the data from 
-            % statesCells = cell(numel(obj.switchedOffEvents), 1);
-            obj.statesArray = State.empty(numel(obj.switchedOffEvents), 0);
+        function statesArray = get.statesArray(obj)
+            % Creates an array of State objects and fills the data from
+            % the switchedOffEvents.           
+            obj.statesArray = State.empty(obj.numberOfStates, 0);
 
             % Loop the switchedOffEvents to create an array of states.
-            for i = 1:numel(obj.switchedOffEvents)
+            for i = 1:obj.numberOfStates
                 stateNumber = obj.switchedOffEvents{i}(1); 
                 stateName = "s" + num2str(stateNumber);
                 
@@ -229,19 +215,12 @@ classdef StateMachineUtils
                 
                 obj.statesArray(i) = State(stateNumber, stateName, activeEvents);
             end
-            
-        end
-        
-        function statesArray = getStatesArray(obj)
-            if isempty(obj.statesArray)
-                obj.statesArray = obj.createStatesArray();
-            end
             statesArray = obj.statesArray;
         end
     end    
 
     methods(Static)
-        function numberOflines = getNumberOfLines(path)
+        function numberOflines = calcNumberOfLines(path)
             fid = fopen(path);
         
             tline = fgetl(fid);

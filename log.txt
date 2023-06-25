@@ -24,7 +24,7 @@ transitions (array nx3);
 
 23/06/23
 
--> 1) Update StateMachineUtils and tests.
+x 1) Update StateMachineUtils and tests.
 
 This class has the purpose to read data from auto-generated files or user 
 made files and transform it into arguments to initialize StateMachine class.
@@ -36,23 +36,12 @@ Then, it has to create:
 2) Create a unique read method for the documents.
 Their name is like loadSomethingFrom(path, format);
 
--> 3) getter and setter methods must be changed:
+x 3) getter and setter methods must be changed:
 https://www.mathworks.com/help/matlab/matlab_oop/property-set-methods.html
 
-commit --
-* Change the get and set methods' names in the StateMachineUtils from 
-getProperty() or setProperty() to get.property or set.property. According 
-to sintaxes as in:
-https://www.mathworks.com/help/matlab/matlab_oop/property-set-methods.html
+25/06/23
 
-* Access them by calling the property name: obj.property.
+1) Create and test a class to encode the array of State object into the 
+Simulink block.
 
-* Review of the TestStateMachineUtils: Fix the names of get and set methods;
-add the property numberOfStates to easily access the number of states 
-loaded.
-
-* Review the TestStateMachine: Fix names of get and set methods and property 
-classes.
-
-* Test the StateMachine class to read files and correctly create input 
-argument for the class.
+2) Create a test class to the new class.

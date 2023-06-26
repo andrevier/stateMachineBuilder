@@ -8,7 +8,7 @@ classdef StateMachineUtils
     properties
         eventsArray int32
         transitions int32
-        statesArray State
+        statesArray cell
         switchedOffEvents cell
         numberOfEvents int32
         numberOfStates int32
@@ -202,7 +202,8 @@ classdef StateMachineUtils
         function statesArray = get.statesArray(obj)
             % Creates an array of State objects and fills the data from
             % the switchedOffEvents.           
-            obj.statesArray = State.empty(obj.numberOfStates, 0);
+            %obj.statesArray = State.empty(obj.numberOfStates, 0);
+            obj.statesArray = cell(obj.numberOfStates, 1);
 
             % Loop the switchedOffEvents to create an array of states.
             for i = 1:obj.numberOfStates
@@ -213,7 +214,7 @@ classdef StateMachineUtils
                 matchedEvents = ismember(obj.eventsArray, obj.switchedOffEvents{i}(2:end));
                 activeEvents = ~matchedEvents;
                 
-                obj.statesArray(i) = State(stateNumber, stateName, activeEvents);
+                obj.statesArray{i} = State(stateNumber, stateName, activeEvents);
             end
             statesArray = obj.statesArray;
         end

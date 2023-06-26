@@ -128,9 +128,9 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             expectedState = State(0, "s0", expectedActiveEvents);
             
             % Match state 0.
-            testCase.assertEqual(actualStateArray(1).number, expectedState.number);
-            testCase.assertEqual(actualStateArray(1).name, expectedState.name);
-            testCase.assertEqual(actualStateArray(1).activeEvents, expectedState.activeEvents);
+            testCase.assertEqual(actualStateArray{1}.number, expectedState.number);
+            testCase.assertEqual(actualStateArray{1}.name, expectedState.name);
+            testCase.assertEqual(actualStateArray{1}.activeEvents, expectedState.activeEvents);
 
             testCase.assertEqual(numel(actualStateArray), 6);
             

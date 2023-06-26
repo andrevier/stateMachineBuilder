@@ -9,7 +9,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             eventsArray = [1, 2, 3, 4];
             transitions = [0, 1, 0; 0, 2, 1; 1, 3, 2];
 
-            stateMachine = StateMachine([s0, s1, s2], transitions, eventsArray);
+            stateMachine = StateMachine({s0, s1, s2}, transitions, eventsArray);
             s = stateMachine.currentState;
             
             % Asserts that the default state is 0.
@@ -208,6 +208,27 @@ classdef TestStateMachine < matlab.unittest.TestCase
             % Asserts that
             testCase.verifyEqual(stateMachine.currentState.number, 2);
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
+        end
+
+        function testInputsEventsOutsideOfTransitionsArray(testCase)
+            % Test the events not specified in the transitions array.
+            % Given the following list of states:
+            s0 = State(0, 's0', [1, 1, 0, 0]);
+            s1 = State(1, 's1', [1, 0, 0, 0]);
+            s2 = State(2, 's2', [1, 1, 1, 0]);
+            eventsArray = [1, 2, 3, 4];
+            transitions = [0, 1, 0; 0, 2, 1; 1, 3, 2];
+            
+            % And subsequent state machine:
+            stateMachine = StateMachine({s0; s1; s2}, transitions, eventsArray);
+
+            % When the state is 0 and an event 3 occurs:
+            testCase.verifyEqual(stateMachine.currentState.number, 0);
+
+            stateMachine.inputEvent = 3;
+
+            testCase.verifyEqual(stateMachine.currentState.number, 0);
+            
         end
 
     end

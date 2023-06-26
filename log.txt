@@ -45,3 +45,8 @@ https://www.mathworks.com/help/matlab/matlab_oop/property-set-methods.html
 Simulink block.
 
 2) Create a test class to the new class.
+
+26/06/23
+Change the input arguments of StateMachine from an array of State objects 
+to a cell of State object because an array of objects is not supported for  
+code generation in Simulink block.

@@ -5,7 +5,7 @@ classdef TestStateEncoder < matlab.unittest.TestCase
             s0 = State(0, 's0', [1, 1, 0, 0]);
             s1 = State(1, 's1', [1, 0, 0, 0]);
             s2 = State(2, 's2', [1, 1, 1, 0]);
-            s = [s0, s1, s2];
+            s = {s0; s1; s2};
             actualEncodedArray = StateEncoder.encode(s);
             
             % Asserts that
@@ -24,7 +24,7 @@ classdef TestStateEncoder < matlab.unittest.TestCase
             s1 = State(1, 's1', [1, 0, 0, 0]);
             s2 = State(2, 's2', [1, 1, 1, 0]);            
 
-            expectedStatesArray = [s0, s1, s2];
+            expectedStatesArray = {s0; s1; s2};
             
             testCase.verifyEqual(actualDecodedArray, expectedStatesArray);            
         end

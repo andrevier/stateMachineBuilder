@@ -50,3 +50,5 @@ Simulink block.
 Change the input arguments of StateMachine from an array of State objects 
 to a cell of State object because an array of objects is not supported for  
 code generation in Simulink block.
+
+Do the tests.

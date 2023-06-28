@@ -2,6 +2,9 @@ classdef TestStateMachine < matlab.unittest.TestCase
 
     methods(Test)
         function testSetState(testCase)
+            addpath model
+            addpath utils
+
             % Given the following list of states.
             s0 = State(0, 's0', [1, 1, 0, 0]);
             s1 = State(1, 's1', [1, 0, 0, 0]);
@@ -28,6 +31,8 @@ classdef TestStateMachine < matlab.unittest.TestCase
         end
 
         function testLoadDataFromFilesAndSetState(testCase)
+            addpath model
+            addpath utils
 
             utils = StateMachineUtils;
 
@@ -84,7 +89,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             
             % State 5
             stateMachine.stateNumber = 5;
-%             event = int32([1;3;11;12;13;14;16;21;23;25;27;31;32;33;34;36;41;43;51;52;54;56;58;61;63]);
+            % event = int32([1;3;11;12;13;14;16;21;23;25;27;31;32;33;34;36;41;43;51;52;54;56;58;61;63]);
             % 5:   1   11   13   31   33   41   51   61
             expectedActiveEvents = logical([0;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
                         
@@ -95,14 +100,17 @@ classdef TestStateMachine < matlab.unittest.TestCase
         end
         
         function testLoadDataFromTctFilesAndSetState(testCase)
+            addpath model
+            addpath utils
+
             % Test using the TCT auto-generated files.
             utils = StateMachineUtils;
 
             utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
 
-            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+            utils = utils.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            utils = utils.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
 
             stateMachine = StateMachine( ...
                 utils.statesArray, utils.transitions, utils.eventsArray);
@@ -162,13 +170,16 @@ classdef TestStateMachine < matlab.unittest.TestCase
         end
 
         function testDefaultState(testCase)
+            addpath model
+            addpath utils
+
             utils = StateMachineUtils;
 
             utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
 
-            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+            utils = utils.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            utils = utils.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
             
             % When
             stateMachine = StateMachine( ...
@@ -185,13 +196,16 @@ classdef TestStateMachine < matlab.unittest.TestCase
         end
 
         function testInputEvent(testCase)
+            addpath model
+            addpath utils
+
             utils = StateMachineUtils;
 
             utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
 
-            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+            utils = utils.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            utils = utils.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
             
             % When
             stateMachine = StateMachine( ...
@@ -211,6 +225,9 @@ classdef TestStateMachine < matlab.unittest.TestCase
         end
 
         function testInputsEventsOutsideOfTransitionsArray(testCase)
+            addpath model
+            addpath utils
+
             % Test the events not specified in the transitions array.
             % Given the following list of states:
             s0 = State(0, 's0', [1, 1, 0, 0]);

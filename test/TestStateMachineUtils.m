@@ -1,7 +1,9 @@
 classdef TestStateMachineUtils < matlab.unittest.TestCase
     methods(Test)
-        function testLoadEventsFromTxt(testCase)                           
+        function testLoadEventsFromTxt(testCase)                        
             % Test read the txt file with all events
+            addpath model
+            addpath utils
             data = StateMachineUtils;
             data = data.readAllEvents('resources/other/allevents.txt');
             
@@ -9,33 +11,39 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             eventsArray = data.eventsArray;
             
             % Asserts that:
-            exp = load("test/expectedEvents.mat");
+            exp = load("resources/matfiles/expectedEvents.mat");
             testCase.assertEqual(eventsArray, int32(exp.expectedEvents));
 
         end
 
         function testLoadEventsFromAds(testCase)
             % Test read the txt file with all events
+            addpath model
+            addpath utils
             data = StateMachineUtils;
             data = data.loadEventsInAds('resources/tct/ALLEVENT.ADS');
             
             % Asserts that
-            exp = load("test/expectedEvents.mat");
+            exp = load("resources/matfiles/expectedEvents.mat");
             testCase.assertEqual(data.eventsArray, int32(exp.expectedEvents));
         end
         
         function testLoadTransitionsInPds(testCase)
-            utils = StateMachineUtils;
-            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            addpath model
+            addpath utils
+            data = StateMachineUtils;
+            data = data.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
 
             % Asserts that
-            exp = load("test/transitions.mat");
-            testCase.verifyEqual(utils.transitions, int32(exp.transitions));
+            exp = load("resources/matfiles/transitions.mat");
+            testCase.verifyEqual(data.transitions, int32(exp.transitions));
 
         end
 
         function testReadTransitions(testCase)                             % check
             % Test if the transitions matrix is created.
+            addpath model
+            addpath utils
             data = StateMachineUtils;
             data = data.readTransitions('resources/other/transitions.txt');
             
@@ -43,11 +51,13 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             transitions = data.transitions();
             
             % Asserts that
-            exp = load("test/transitions.mat");
+            exp = load("resources/matfiles/transitions.mat");
             testCase.verifyEqual(transitions, int32(exp.transitions));
         end
 
         function testLoadDisabledEvents(testCase)
+            addpath model
+            addpath utils
             data = StateMachineUtils;
             data = data.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
             
@@ -55,7 +65,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             switchedOffEvents = data.switchedOffEvents;
 
             % Asserts that
-            exp = load('test/switchedOffEvents.mat');
+            exp = load('resources/matfiles/switchedOffEvents.mat');
             
             % state 0
             actual = switchedOffEvents{1,1};
@@ -66,6 +76,8 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         end
         
         function testReadSwitchedOffEvents(testCase)                       
+            addpath model
+            addpath utils
             data = StateMachineUtils;
             data = data.readSwitchedOffEvents('resources/other/switchedOffEvents.csv');
             
@@ -73,7 +85,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             switchedOffEvents = data.switchedOffEvents;
 
             % Asserts that
-            exp = load('test/switchedOffEvents.mat');
+            exp = load('resources/matfiles/switchedOffEvents.mat');
             
             % state 0
             actual = switchedOffEvents{1,1};
@@ -113,15 +125,17 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
         end
 
         function testCreateStatesArrayWithFiles(testCase)
-            utils = StateMachineUtils;
+            addpath model
+            addpath utils
+            data = StateMachineUtils;
 
-            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+            data = data.loadEventsInAds('resources/tct/ALLEVENT.ADS');
             
-            utils = utils.loadDisabledEventsInPdt('resources/tct/DATA_SIMSUP1_MG1.PDT');
+            data = data.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
 
-            utils = utils.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            data = data.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
 
-            actualStateArray = utils.statesArray;
+            actualStateArray = data.statesArray;
 
             expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;1;1;0;1]);
             

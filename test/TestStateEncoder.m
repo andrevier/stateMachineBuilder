@@ -1,6 +1,8 @@
 classdef TestStateEncoder < matlab.unittest.TestCase
     methods(Test)
         function testEncodeStatesArray(testCase)
+            addpath model
+            addpath utils
             % Given the following list of states.
             s0 = State(0, 's0', [1, 1, 0, 0]);
             s1 = State(1, 's1', [1, 0, 0, 0]);
@@ -15,6 +17,9 @@ classdef TestStateEncoder < matlab.unittest.TestCase
         end
 
         function testDecodeintoStatesArray(testCase)
+            addpath model
+            addpath utils
+            
             % When
             encodedArray = [0, 1, 1, 0, 0; 1, 1, 0, 0, 0; 2, 1, 1, 1, 0];
             actualDecodedArray = StateEncoder.decode(encodedArray);

@@ -32,7 +32,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             addpath model
             addpath utils
             data = StateMachineUtils;
-            data = data.loadTransitionsInAds('resources/tct/SIMSUP1_MG1.ADS');
+            data = data.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
 
             % Asserts that
             exp = load("resources/matfiles/transitions.mat");

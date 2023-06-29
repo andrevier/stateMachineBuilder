@@ -23,24 +23,11 @@ classdef StateMachine
             obj.transitions = transitions;
             obj.numberOfStates = length(statesArray);
             obj.eventsArray = eventsArray;
-
-            % Set default state as the first element in the array which
-            % must be 0.
-%             for i = 1:obj.numberOfStates
-%                 if (statesArray{i}.number == 0)
-%                     obj.stateNumber = 0;
-%                     obj.stateIndex = i;
-%                     break;
-%                 end
-%             end
+                        
+            % Default state as the first.
             obj.stateNumber = statesArray{1}.number;
             obj.stateIndex = 1;
-            % If there is no zero state, the first element of the array is
-            % the default state.
-%             if isempty(obj.stateNumber)
-%                 obj.stateNumber = statesArray{1}.number;
-%                 obj.stateIndex = 1;
-%             end
+
         end
 
         function activeEvents = get.currentActiveEvents(obj)

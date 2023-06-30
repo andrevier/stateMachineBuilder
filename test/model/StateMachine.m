@@ -4,17 +4,17 @@
 classdef StateMachine
     properties
         statesArray cell
-        transitions int32
-        numberOfStates int32
-        eventsArray int32
-        stateNumber int32
-        stateIndex int32
+        transitions double
+        numberOfStates double
+        eventsArray double
+        stateNumber double
+        stateIndex double
     end
 
     properties(Dependent)
         currentState State
         currentActiveEvents logical
-        inputEvent int32
+        inputEvent double
     end
 
     methods
@@ -43,17 +43,16 @@ classdef StateMachine
 
             [row, ~] = ismember(obj.transitions(:, 1:2), stateEventPair, 'rows');
 
-            futureStateNumber = obj.transitions(row, 3);
-            if ~isempty(futureStateNumber)
+            selectedLine = obj.transitions(row, :);
+            if ~isempty(selectedLine)
                 % Then, substitute the current state by the future.
-                obj.stateNumber = futureStateNumber(1);
+                obj.stateNumber = selectedLine(3);
             end
         end
 
         function currentState = get.currentState(obj)
             for i = 1:obj.numberOfStates
                 if isequal(obj.statesArray{i}.number, obj.stateNumber)
-                    obj.stateNumber = obj.stateNumber;
                     obj.stateIndex = i;
                     break;
                 end

@@ -52,3 +52,35 @@ to a cell of State object because an array of objects is not supported for
 code generation in Simulink block.
 
 Do the tests.
+
+29/06/2023
+Bugs: 
+1 - Cannot debug step-by-step in the matlab function block in model
+StateMachineModelFromFile.slx
+2 - transition with certain event leads to wrong state.
+
+Guesses: 
+1 - The definition of the variables are double by default. The class utils 
+generates int32. The conversion int32 <-> double can be the source of error.
+    The convertion was made and the error now is:
+    Assertion failed: StructType::isa(fieldType)
+2 - There is no error in model StateMachineModel.slx
+
+(x) test with the same code + StateMachineUtils object;
+(x) test with the same code + StateEncoder object;
+(x) test with the same code + StateEncoder.decode(stateMatrix) with a
+    small, user-made stateMatrix;
+(x) test with the same code + StateEncoder.decode(stateMatrix) plus send
+    one parameter from file (allEventsArray);
+(x) test with the same code + StateEncoder.decode(stateMatrix) plus send
+    two parameters from file (allEventsArray, transitionsArray);
+(x) test with the same code + StateEncoder.decode(stateMatrix) plus send
+     three parameters from file;
+    The error is in StateEncoder.decode(stateMatrix) for an imported file.
+    The error is converting strings to make the name of the State. The 
+    solution is to name each state as 'empty' right now.
+
+    After the change, the model runs but the bug 2 remains.
+
+
+ 

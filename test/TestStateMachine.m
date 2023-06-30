@@ -210,7 +210,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             % When
             stateMachine = StateMachine( ...
                 utils.statesArray, utils.transitions, utils.eventsArray);
-
+            
             % When receive event 36 as input.
             stateMachine.inputEvent = 36;
 
@@ -222,6 +222,14 @@ classdef TestStateMachine < matlab.unittest.TestCase
             % Asserts that
             testCase.verifyEqual(stateMachine.currentState.number, 2);
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
+
+            % When
+            stateMachine.stateNumber = 0;
+
+            stateMachine.inputEvent = 32;
+
+            % Asserts that
+            testCase.verifyEqual(stateMachine.currentState.number, 1);
         end
 
         function testInputsEventsOutsideOfTransitionsArray(testCase)

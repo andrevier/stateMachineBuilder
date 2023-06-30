@@ -82,5 +82,8 @@ generates int32. The conversion int32 <-> double can be the source of error.
 
     After the change, the model runs but the bug 2 remains.
 
+30/06/23
 
+Currently, variable currentState is a dependent property in Matlab. 
+Changing to a public property.
  

@@ -23,7 +23,7 @@ classdef StateMachine
             obj.transitions = transitions;
             obj.numberOfStates = length(statesArray);
             obj.eventsArray = eventsArray;
-                        
+
             % Default state as the first.
             obj.stateNumber = statesArray{1}.number;
             obj.stateIndex = 1;
@@ -44,20 +44,28 @@ classdef StateMachine
             [row, ~] = ismember(obj.transitions(:, 1:2), stateEventPair, 'rows');
 
             selectedLine = obj.transitions(row, :);
+
+            % Then, substitute the number of the current state and change 
+            % the related index in the statesArray.
             if ~isempty(selectedLine)
-                % Then, substitute the current state by the future.
                 obj.stateNumber = selectedLine(3);
             end
+
         end
 
         function currentState = get.currentState(obj)
+            currentState =  obj.statesArray{obj.stateIndex};
+        end
+
+        function obj = set.stateNumber(obj, stateNumber)
             for i = 1:obj.numberOfStates
-                if isequal(obj.statesArray{i}.number, obj.stateNumber)
+                % Check if there is the state number in the states array.
+                if isequal(obj.statesArray{i}.number, stateNumber)
                     obj.stateIndex = i;
+                    obj.stateNumber = stateNumber;
                     break;
                 end
-            end
-            currentState =  obj.statesArray{obj.stateIndex};
+            end            
         end
     end
 end

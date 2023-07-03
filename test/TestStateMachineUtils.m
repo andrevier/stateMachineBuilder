@@ -12,7 +12,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             
             % Asserts that:
             exp = load("resources/matfiles/expectedEvents.mat");
-            testCase.assertEqual(eventsArray, int32(exp.expectedEvents));
+            testCase.assertEqual(eventsArray, exp.expectedEvents);
 
         end
 
@@ -25,7 +25,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             
             % Asserts that
             exp = load("resources/matfiles/expectedEvents.mat");
-            testCase.assertEqual(data.eventsArray, int32(exp.expectedEvents));
+            testCase.assertEqual(data.eventsArray, exp.expectedEvents);
         end
         
         function testLoadTransitionsInPds(testCase)
@@ -36,7 +36,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
 
             % Asserts that
             exp = load("resources/matfiles/transitions.mat");
-            testCase.verifyEqual(data.transitions, int32(exp.transitions));
+            testCase.verifyEqual(data.transitions, exp.transitions);
 
         end
 
@@ -52,7 +52,7 @@ classdef TestStateMachineUtils < matlab.unittest.TestCase
             
             % Asserts that
             exp = load("resources/matfiles/transitions.mat");
-            testCase.verifyEqual(transitions, int32(exp.transitions));
+            testCase.verifyEqual(transitions, exp.transitions);
         end
 
         function testLoadDisabledEvents(testCase)

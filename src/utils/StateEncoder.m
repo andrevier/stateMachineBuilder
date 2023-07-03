@@ -27,9 +27,9 @@ classdef StateEncoder
 
             for i = 1:numOfStates
                 stateNumber = encodedStatesArray(i, 1);
-                stateActiveEvents = encodedStatesArray(i, 2 : end);
-                stateName = "s" + string(stateNumber);
-                statesArray{i} = State(stateNumber, stateName, stateActiveEvents);
+                stateActiveEvents = encodedStatesArray(i, 2 : end)';
+                %stateName = "s" + string(stateNumber);
+                statesArray{i, 1} = State(stateNumber, 'empty', stateActiveEvents);
             end
         end
     end

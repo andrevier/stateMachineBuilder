@@ -6,19 +6,19 @@
 classdef StateMachineUtils
 
     properties
-        eventsArray int32
-        transitions int32
+        eventsArray double
+        transitions double
         statesArray cell
         switchedOffEvents cell
-        numberOfEvents int32
-        numberOfStates int32
+        numberOfEvents double
+        numberOfStates double
     end
 
     methods
        
         function obj = readAllEvents(obj, allEventsPath)                   % check
             % Read the file containing all possible events and return an 
-            % array nx1 of the number of events (int32) in the order of
+            % array nx1 of the number of events in the order of
             % reading.           
 
             size = StateMachineUtils.calcNumberOfLines(allEventsPath);
@@ -28,7 +28,7 @@ classdef StateMachineUtils
             tline = fgets(fid);
             i = 1;
             while ischar(tline)
-                obj.eventsArray(i,1) = str2num(tline);
+                obj.eventsArray(i,1) = str2double(tline);
                 i = i + 1;
                 tline = fgets(fid);
             end

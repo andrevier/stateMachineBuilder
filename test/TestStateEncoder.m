@@ -33,5 +33,41 @@ classdef TestStateEncoder < matlab.unittest.TestCase
             
             testCase.verifyEqual(actualDecodedArray, expectedStatesArray);            
         end
+
+        function testDecodeWithDataFromFiles(testCase)
+            addpath model
+            addpath utils
+
+            utils = StateMachineUtils;
+
+            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+
+            utils = utils.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
+
+            utils = utils.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
+            
+            stateMatrix = StateEncoder.encode(utils.statesArray);
+
+            % 1) When
+            actualStatesArray = StateEncoder.decode(stateMatrix);
+            
+            % Asserts that
+            testCase.verifyEqual(actualStatesArray, utils.statesArray);
+            
+            % 2) When
+            stateMachine = StateMachine( ...
+                actualStatesArray, utils.transitions, utils.eventsArray);
+            
+            % Asserts that
+            stateMachine.inputEvent = 21;
+            actualStateNumber = stateMachine.currentState.number;
+            testCase.verifyEqual(actualStateNumber, 0);
+            
+            % Asserts that [0 32 1]
+            stateMachine.inputEvent = 32;
+            actualStateNumber = stateMachine.currentState.number;
+            testCase.verifyEqual(actualStateNumber, 1);
+            
+        end
     end
 end

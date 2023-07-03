@@ -7,7 +7,7 @@ classdef State
     methods
         function obj = State(number, name, activeEvents)
             obj.number = number;
-            obj.name = name;
+            obj.name = char(name);
             obj.activeEvents = activeEvents;
         end        
     end

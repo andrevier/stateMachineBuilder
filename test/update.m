@@ -6,3 +6,4 @@ copyfile utils ..\src\utils\
 copyfile StateMachineModel.slx ..\src\
 copyfile StateMachineModelFromFiles.slx ..\src\
 copyfile StateMachineWithBatchEvents.slx ..\src\
+copyfile BatchEventsFor3StateMachines.slx ..\src\

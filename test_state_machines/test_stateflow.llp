@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+    <General>
+        <att_name>Test_Stateflow</att_name>
+        <att_description>This is a project!</att_description>
+        <att_ip_address>146.164.78.200:25251</att_ip_address>
+        <att_hashcode>4CA6164E-7A4C-485C-AD2C-1AB08D6027ED</att_hashcode>
+        <att_autosave>ON</att_autosave>
+        <att_project_locked>0</att_project_locked>
+        <att_filename>C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\Test_Stateflow.llp</att_filename>
+    </General>
+    <Optionals>
+        <att_donotask_loadcfg_at_prjopen>0</att_donotask_loadcfg_at_prjopen>
+        <att_matlab_compile_outprocess>OFF</att_matlab_compile_outprocess>
+    </Optionals>
+    <Models>
+        <Model>
+            <Path>
+                <Relative>models/state_machine_by_code/state_machine_by_code.slx</Relative>
+                <Absolute>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/state_machine_by_code/state_machine_by_code.slx</Absolute>
+                <UNC>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/state_machine_by_code/state_machine_by_code.slx</UNC>
+            </Path>
+        </Model>
+        <Model>
+            <Path>
+                <Relative>models/load_from_files/load_from_files.slx</Relative>
+                <Absolute>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/load_from_files/load_from_files.slx</Absolute>
+                <UNC>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/load_from_files/load_from_files.slx</UNC>
+            </Path>
+        </Model>
+        <Model>
+            <Path>
+                <Relative>models/batch_events/batch_events.slx</Relative>
+                <Absolute>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/batch_events/batch_events.slx</Absolute>
+                <UNC>C:/Users/andrerangel/OPAL-RT/RT-LABv2023.1_Workspace/Test_Stateflow/models/batch_events/batch_events.slx</UNC>
+            </Path>
+        </Model>
+    </Models>
+</Project>

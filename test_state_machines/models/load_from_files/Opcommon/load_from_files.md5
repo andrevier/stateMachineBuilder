@@ -1,0 +1,82 @@
+[SEPARATION.SETTINGS]
+CompilerVersion=AUTOMATIC
+MATLAB_VERSION=169
+PostBuildCmd=
+PreBuildCmd=
+RTLAB_Version=v2023.1.0.533undefined
+[SEPARATION]
+Opcommon\load_from_files.subsys=exists
+Opcommon\load_from_files_1_sm_master.slx=exists
+load_from_files.slx=5067c0c77b392e0aa0b279a6be2eef63@07/09/23 16:28:04
+load_from_files_2_sc_console.slx=exists
+[GENERATION.REDHAWK.SETTINGS]
+CompilerVersion=Automatic
+PlatformDependent=yes
+RTLAB_Version=v2023.1.0.533undefined
+[GENERATION.REDHAWK]
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tlc=649c42bccd471daa642662d96f043530@01/26/23 21:15:30
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tmf=cd881c1cfb16b6d472847e8cb5e42bfa@01/26/23 21:15:30
+Opcommon\load_from_files.param=68e5f1b65b61f68143188a27ecb6e944@07/09/23 16:34:44
+Opcommon\load_from_files.signal=b2db9fdd84d761bb79ff97d5271d2b86@07/09/23 16:34:44
+Opcommon\load_from_files.subsys=69dd00169d6515ef098e6d4ba367a4fb@07/09/23 16:34:01
+Opcommon\load_from_files_1_sm_master.slx=f35809272380361349feb64eba10c4ca@07/09/23 16:33:49
+load_from_files_sm_master\OpREDHAWKtarget\OpalSnapshotUtil.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\builtin_typeid_types.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.mk=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_data.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_offsets.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_private.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_types.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\multiword_types.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtGetInf.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtGetInf.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtGetNaN.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtGetNaN.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rt_defines.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rt_nonfinite.c=exists
+load_from_files_sm_master\OpREDHAWKtarget\rt_nonfinite.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtmodel.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\rtwtypes.h=exists
+load_from_files_sm_master\OpREDHAWKtarget\settings.json=exists
+load_from_files_sm_master\OpREDHAWKtarget\zero_crossing_types.h=exists
+[COMPILATION.REDHAWK]
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\model_main.c=20126176871ed37bdf13744f2fad163e@01/26/23 21:15:30
+load_from_files_sm_master\OpREDHAWKtarget\OpalSnapshotUtil.c=06d13bc3806263fb5c0e5facb74627cc@07/09/23 16:34:44
+load_from_files_sm_master\OpREDHAWKtarget\builtin_typeid_types.h=def612b1e23a4c143784887e7e034131@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master=exists
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.c=3c2862b048e4b7f036fb1f61bd769bc6@07/09/23 16:35:17
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.h=87170dd7a0fd4d273fc9c6c172112c6a@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.mk=783dac7b376078cbecc5ff994dfd07c6@07/09/23 16:34:41
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_data.c=2b551ad9646e2dee43b9e22ff80f7696@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_offsets.c=576fdefb3c77fc524e17bd141e487c69@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_private.h=ca838301bbbd31f4f97b107b6b91bf23@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master_types.h=bc17233e4a388ce743d3ddab3a2c67d9@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\multiword_types.h=bf7b196f8d1c9faaa27de55c33e38456@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\rtGetInf.c=256d0abf4bff515f93a456831aa87ad4@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\rtGetInf.h=a120f861c22a4733a51cf18c86dffef4@07/09/23 16:34:36
+load_from_files_sm_master\OpREDHAWKtarget\rtGetNaN.c=ece9ada9d5349939c10708ecf791304f@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\rtGetNaN.h=22aa634cdde3d8dc9c5d53a55dccc174@07/09/23 16:34:36
+load_from_files_sm_master\OpREDHAWKtarget\rt_defines.h=7055affac97b275daf617aa429424ea4@07/09/23 16:34:36
+load_from_files_sm_master\OpREDHAWKtarget\rt_nonfinite.c=c9ed040624c5d317914d03b420f732b1@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\rt_nonfinite.h=fe8ab8747a436ce0c3bbc639596df157@07/09/23 16:34:36
+load_from_files_sm_master\OpREDHAWKtarget\rtmodel.h=206bbe21a0412715b9c159c2a3882ae5@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\rtwtypes.h=4d5c7cf6abbb417f48aa655261ab3da4@07/09/23 16:34:38
+load_from_files_sm_master\OpREDHAWKtarget\settings.json=4b24ef583b7871903fa33c8032e1ef15@07/09/23 16:35:17
+load_from_files_sm_master\OpREDHAWKtarget\zero_crossing_types.h=ae5ea87e47fe96dc5e971cdf03c73e80@07/09/23 16:34:38
+[COMPILATION.REDHAWK.SETTINGS]
+CompilerVersion=Automatic
+DEBUG=0
+DevNodeIP=146.164.78.85
+DevNodeOSVersion=Red Hat 5.2 (2.6.29.6-opalrt-6.2.1)
+EXT_CC_OPTS=
+EXT_LD_OPTS=
+EXT_LIB=
+EXT_LIBPATH=
+RTLAB_Version=v2023.1.0.533undefined
+TargetCompileCmd=
+USER_INCS=
+USER_SRCS=
+[INTERNAL]
+LAST_PLATFORM=4

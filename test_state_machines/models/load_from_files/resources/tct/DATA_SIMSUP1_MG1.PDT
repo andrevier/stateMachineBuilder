@@ -1,0 +1,19 @@
+DATA_SIMSUP1_MG1
+
+
+Control data are displayed as a list of supervisor states
+where disabling occurs, together with the events that must
+be disabled there.
+
+DATA_SIMSUP1_MG1 is CONTROLLABLE
+
+control data:
+
+
+       0:   1   11   13   21   25   41   51   61 
+       1:   1   11   13   23   25   27   31   33   41   51   61 
+       2:   1   11   13   21   27   31   33   41   51   61 
+       3:   1   13   23   33   41   51   61 
+       4:   1   11   27   31   41   51   61 
+       5:   1   11   13   31   33   41   51   61 
+

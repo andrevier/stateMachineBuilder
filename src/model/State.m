@@ -1,6 +1,6 @@
 classdef State 
     properties
-        number double
+        number int32
         name char
         activeEvents logical
     end

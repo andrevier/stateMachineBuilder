@@ -1,0 +1,44 @@
+[Parameter]
+0=load_from_files_1_sm_master/SM_master/MATLAB Function|allEvents|allEvents|CVector|0|25|1|1.0|3.0|11.0|12.0|13.0|14.0|16.0|21.0|23.0|25.0|27.0|31.0|32.0|33.0|34.0|36.0|41.0|43.0|51.0|52.0|54.0|56.0|58.0|61.0|63.0|S-Function stateflow|1:7|
+1=load_from_files_1_sm_master/SM_master/MATLAB Function|encodedStates|encodedStates|Matrix|0|6|26|0.0|1.0|2.0|3.0|4.0|5.0|0.0|0.0|0.0|0.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|1.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|0.0|1.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|1.0|0.0|1.0|1.0|1.0|1.0|0.0|1.0|0.0|1.0|1.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|1.0|0.0|1.0|1.0|0.0|0.0|1.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|1.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|0.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|0.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|1.0|0.0|0.0|0.0|0.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|S-Function stateflow|1:7|
+10=load_from_files_1_sm_master/SM_master/rtlab_send_subsystem/Subsystem1/Send1/S-Function|P1|Acqu_group|Scalar|0|1|1|1.0|S-Function OP_SEND|1:37:31|
+2=load_from_files_1_sm_master/SM_master/MATLAB Function|transitions|transitions|Matrix|0|20|3|0.0|0.0|0.0|0.0|0.0|1.0|1.0|1.0|1.0|1.0|1.0|2.0|2.0|2.0|3.0|3.0|4.0|4.0|5.0|5.0|31.0|32.0|33.0|34.0|36.0|12.0|14.0|21.0|32.0|34.0|36.0|14.0|16.0|25.0|11.0|31.0|13.0|33.0|23.0|27.0|0.0|1.0|0.0|0.0|2.0|3.0|3.0|3.0|3.0|5.0|4.0|4.0|4.0|4.0|1.0|1.0|2.0|1.0|0.0|0.0|S-Function stateflow|1:7|
+3=load_from_files_1_sm_master/OpCCode_do_not_touch/S-Function1|Value|0|Scalar|0|1|1|0.0|Constant|13:7|
+4=load_from_files_1_sm_master/OpCCode_do_not_touch/S-Function|InitialCondition|0|Scalar|0|1|1|0.0|Memory|13:6|
+5=load_from_files_1_sm_master/SM_master/OpComm/Receive/S-Function|P1Size| |RVector|0|1|2|1.0|1.0|S-Function RECV_Param|1:26:21|
+6=load_from_files_1_sm_master/SM_master/OpComm/Receive/S-Function|P1|Data_width|Scalar|0|1|1|1.0|S-Function RECV_Param|1:26:21|
+7=load_from_files_1_sm_master/SM_master/OpComm/Receive/S-Function|P2Size| |RVector|0|1|2|1.0|1.0|S-Function RECV_Param|1:26:21|
+8=load_from_files_1_sm_master/SM_master/OpComm/Receive/S-Function|P2|InitialConditions|Scalar|0|1|1|11.0|S-Function RECV_Param|1:26:21|
+9=load_from_files_1_sm_master/SM_master/rtlab_send_subsystem/Subsystem1/Send1/S-Function|P1Size| |RVector|0|1|2|1.0|1.0|S-Function OP_SEND|1:37:31|
+nbParameters=11
+[Signal]
+0=load_from_files_1_sm_master/OpCCode_do_not_touch/S-Function|NULL|0|1|1|1|S|Memory|0|13:6|
+1=load_from_files_1_sm_master/OpCCode_do_not_touch/Sum|NULL|1|1|1|1|S|Sum|0|13:9|
+2=load_from_files_1_sm_master/SM_master/OpComm/Receive/S-Function|NULL|2|1|1|1|S|S-Function RECV_Param|0|1:26:21|
+3=load_from_files_1_sm_master/SM_master/MATLAB Function|outputState|3|1|1|1|S|Stateflow|0|1:7|
+nbSignals=4
+[ModelDataStructure]
+128=zCCacheNeedsReset
+22=derivCacheNeedsReset
+8=CTOutputIncnstWithState
+[dwork]
+0=stateMachine|StateMachine_load_from_files__T|
+1=SFunction_PreviousInput|real_T|
+2=SFunction_IWORK|IWORK|
+3=stateMachine_not_empty|boolean_T|
+[TimingStructure]
+101=simTimeStep
+103=tStart
+104=stepSize
+105=stepSize0
+107=stopRequestedFlag
+116=tArray
+130=timeOfLastOutput
+27=tFinal
+3=clockTick0
+4=clockTickH0
+66=offsetTimesArray
+72=perTaskSampleHitsArray
+90=sampleHitArray
+94=sampleTimesArray
+97=sampleTimeTaskIDArray

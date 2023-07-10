@@ -16,7 +16,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             s = stateMachine.currentState;
             
             % Asserts that the default state is 0.
-            testCase.verifyEqual(s.number, 0);
+            testCase.verifyEqual(s.number, int32(0));
             testCase.verifyEqual(s.activeEvents, logical([1, 1, 0, 0]));
 
             % Set state to 1.
@@ -25,7 +25,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             s = stateMachine.currentState;
 
             % Asserts that the default state is 1.
-            testCase.verifyEqual(s.number, 1);
+            testCase.verifyEqual(s.number, int32(1));
             testCase.verifyEqual(s.activeEvents, logical([1, 0, 0, 0]));
 
         end
@@ -54,7 +54,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;1;0;0;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
             
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 1);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(1));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
 
             % State 2
@@ -64,7 +64,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;1;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
 
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 2);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(2));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 3
@@ -74,7 +74,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;1;1;0;1;1;1;0;1;1;1;1;0;1;1;0;1;0;1;1;1;1;0;1]);
                         
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 3);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(3));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 4
@@ -84,7 +84,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;1;1;1;1;1;1;0;0;1;1;1;1;0;1;0;1;1;1;1;0;1]);
             
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 4);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(4));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 5
@@ -94,7 +94,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
                         
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 5);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(5));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
 
         end
@@ -124,7 +124,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;1;0;0;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
             
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 1);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(1));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
 
             % State 2
@@ -134,7 +134,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;1;0;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
 
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 2);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(2));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 3
@@ -144,7 +144,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;1;1;0;1;1;1;0;1;1;1;1;0;1;1;0;1;0;1;1;1;1;0;1]);
                         
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 3);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(3));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 4
@@ -154,7 +154,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;1;1;1;1;1;1;0;0;1;1;1;1;0;1;0;1;1;1;1;0;1]);
             
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 4);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(4));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
             
             % State 5
@@ -164,7 +164,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;0;1;0;1;1;1;1;0;1]);
                         
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 5);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(5));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
 
         end
@@ -191,7 +191,7 @@ classdef TestStateMachine < matlab.unittest.TestCase
             expectedActiveEvents = logical([0;1;0;1;0;1;1;0;1;0;1;1;1;1;1;1;0;1;0;1;1;1;1;0;1]);
                        
             % Asserts that
-            testCase.verifyEqual(stateMachine.currentState.number, 0);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(0));
             testCase.verifyEqual(stateMachine.currentState.activeEvents, expectedActiveEvents);
         end
 
@@ -248,12 +248,38 @@ classdef TestStateMachine < matlab.unittest.TestCase
             stateMachine = StateMachine({s0; s1; s2}, transitions, eventsArray);
 
             % When the state is 0 and an event 3 occurs:
-            testCase.verifyEqual(stateMachine.currentState.number, 0);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(0));
 
             stateMachine.inputEvent = 3;
 
-            testCase.verifyEqual(stateMachine.currentState.number, 0);
+            testCase.verifyEqual(stateMachine.currentState.number, int32(0));
             
+        end
+
+        function testBatchEvents(testCase)
+            addpath model
+            addpath utils
+
+            utils = StateMachineUtils;
+
+            utils = utils.loadEventsInAds('resources/tct/ALLEVENT.ADS');
+
+            utils = utils.loadDisabledEventsInPdt('resources/tct/supervisor1/DATA_SIMSUP1_MG1.PDT');
+
+            utils = utils.loadTransitionsInAds('resources/tct/supervisor1/SIMSUP1_MG1.ADS');
+            
+            % When
+            stateMachine = StateMachine( ...
+                utils.statesArray, utils.transitions, utils.eventsArray);
+            
+            batch = [32, 14, 36];
+
+            for i=1:length(batch)
+                stateMachine.inputEvent = batch(i);
+            end
+            
+            % Asserts that
+            testCase.verifyEqual(stateMachine.currentState.number, int32(3));
         end
 
     end

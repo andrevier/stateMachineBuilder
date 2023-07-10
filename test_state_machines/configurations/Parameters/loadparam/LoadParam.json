@@ -1,0 +1,18 @@
+[
+  {"version":2},
+  {
+    "Opal::Simulation::SerializeableLoadParamList":
+    {
+      "name":"266C7C54-C39C-4857-803C-BE1E7CF276C6",
+      "loadParamSets":
+      [
+        "Test.slx",
+        "state_machine.slx",
+        "state_machine_by_code.slx",
+        "load_from_files.slx",
+        "/batch_events.slx"
+      ],
+      "parent":"/"
+    }
+  }
+]

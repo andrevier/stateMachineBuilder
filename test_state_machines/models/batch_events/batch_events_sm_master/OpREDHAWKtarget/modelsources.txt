@@ -1,2 +1,0 @@
-    batch_events_1_sm_master.c
-

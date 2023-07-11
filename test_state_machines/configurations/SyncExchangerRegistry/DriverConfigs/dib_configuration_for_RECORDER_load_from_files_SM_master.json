@@ -1,1 +1,0 @@
-{"io_name":"RECORDER_load_from_files_SM_master","io_type":"DataLogger","io_config_file_name":"CEE90F7B-1E9B-455C-8E9B-E76EBEFD10B4.opal","bus_in":{"name":"bus_RECORDER_load_from_files_SM_master_in","type":"bus","items":[{"name":"SIGNAL_GROUP_1","type":"bus","items":[{"name":"log_input","type":"F64","num_point":"1"},{"name":"trigger_input","type":"F64","num_point":"1"}]}]}}

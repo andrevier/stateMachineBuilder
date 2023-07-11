@@ -1,0 +1,82 @@
+[SEPARATION.SETTINGS]
+CompilerVersion=AUTOMATIC
+MATLAB_VERSION=169
+PostBuildCmd=
+PreBuildCmd=
+RTLAB_Version=v2023.1.0.533undefined
+[SEPARATION]
+Opcommon\batch_events_3_super_1_sm_master.slx=exists
+Opcommon\batch_events_3_supervisors.subsys=exists
+batch_events_3_supervisors.slx=682e2a7b7275d37f34f4515747597736@07/11/23 10:56:12
+batch_events_3_supervisors_2_sc_console.slx=exists
+[GENERATION.REDHAWK.SETTINGS]
+CompilerVersion=Automatic
+PlatformDependent=yes
+RTLAB_Version=v2023.1.0.533undefined
+[GENERATION.REDHAWK]
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tlc=649c42bccd471daa642662d96f043530@01/26/23 21:15:30
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tmf=cd881c1cfb16b6d472847e8cb5e42bfa@01/26/23 21:15:30
+Opcommon\batch_events_3_super_1_sm_master.slx=94231f6a2071350d3059c492eb766be1@07/11/23 11:04:18
+Opcommon\batch_events_3_supervisors.param=aaf0d10cbe23b0c9440df02d993924ae@07/11/23 11:05:24
+Opcommon\batch_events_3_supervisors.signal=043ead7b621f107b4db6f7c5ee364081@07/11/23 11:05:24
+Opcommon\batch_events_3_supervisors.subsys=ea72e5532d0dcb2b38d23b53afdbd553@07/11/23 11:04:29
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\OpalSnapshotUtil.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.mk=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_data.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_offsets.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_private.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_types.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\builtin_typeid_types.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\multiword_types.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetInf.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetInf.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetNaN.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetNaN.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_defines.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_nonfinite.c=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_nonfinite.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtmodel.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtwtypes.h=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\settings.json=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\zero_crossing_types.h=exists
+[COMPILATION.REDHAWK]
+..\..\..\..\..\..\..\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\model_main.c=20126176871ed37bdf13744f2fad163e@01/26/23 21:15:30
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\OpalSnapshotUtil.c=0061dc53dba80af9624c926870c9004f@07/11/23 11:05:24
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master=exists
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.c=ade342928db1d47eded76a962c397429@07/11/23 11:06:00
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.h=e039253934a7623d4fb199fe47c85fc1@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master.mk=2978ff0a5c56db41e56d20bf4aa895b7@07/11/23 11:05:21
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_data.c=4f8c7f0211622ae210b04212feff76d1@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_offsets.c=a8b70dc9a94d1829f88d47f23993abcb@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_private.h=7ee9c6b30572b32c54337e99a5c09ec4@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\batch_events_3_super_1_sm_master_types.h=ad2119b27650cbb5bebb89a904c52268@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\builtin_typeid_types.h=def612b1e23a4c143784887e7e034131@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\multiword_types.h=bf7b196f8d1c9faaa27de55c33e38456@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetInf.c=256d0abf4bff515f93a456831aa87ad4@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetInf.h=a120f861c22a4733a51cf18c86dffef4@07/11/23 11:05:14
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetNaN.c=ece9ada9d5349939c10708ecf791304f@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtGetNaN.h=22aa634cdde3d8dc9c5d53a55dccc174@07/11/23 11:05:14
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_defines.h=7055affac97b275daf617aa429424ea4@07/11/23 11:05:14
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_nonfinite.c=c9ed040624c5d317914d03b420f732b1@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rt_nonfinite.h=fe8ab8747a436ce0c3bbc639596df157@07/11/23 11:05:14
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtmodel.h=f667a9e3aaa3c3a65f9b16e592d38312@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\rtwtypes.h=4d5c7cf6abbb417f48aa655261ab3da4@07/11/23 11:05:17
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\settings.json=c31bc93921f5d18560e6467c4edc5d8e@07/11/23 11:05:59
+batch_events_3_supervisors_sm_master\OpREDHAWKtarget\zero_crossing_types.h=ae5ea87e47fe96dc5e971cdf03c73e80@07/11/23 11:05:17
+[COMPILATION.REDHAWK.SETTINGS]
+CompilerVersion=Automatic
+DEBUG=0
+DevNodeIP=146.164.78.85
+DevNodeOSVersion=Red Hat 5.2 (2.6.29.6-opalrt-6.2.1)
+EXT_CC_OPTS=
+EXT_LD_OPTS=
+EXT_LIB=
+EXT_LIBPATH=
+RTLAB_Version=v2023.1.0.533undefined
+TargetCompileCmd=
+USER_INCS=
+USER_SRCS=
+[INTERNAL]
+LAST_PLATFORM=4

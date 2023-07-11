@@ -1,0 +1,42 @@
+SM_master/OpComm/Receive/S-Function/port1
+/
+
+2
+F64
+9
+SM_master/MATLAB Function5/port1
+/
+
+3
+F64
+1
+SM_master/MATLAB Function4/port1
+/
+
+4
+F64
+1
+SM_master/MATLAB Function1/port1
+/
+
+5
+F64
+1
+SM_master/MATLAB Function3/port1
+/
+
+6
+F64
+25
+SM_master/MATLAB Function2/port1
+/
+
+7
+F64
+25
+SM_master/MATLAB Function/port1
+/
+
+8
+F64
+25

@@ -1,3 +1,5 @@
+% State class 
+% Represents all information of states in a finite state machine.
 classdef State 
     properties
         number int32

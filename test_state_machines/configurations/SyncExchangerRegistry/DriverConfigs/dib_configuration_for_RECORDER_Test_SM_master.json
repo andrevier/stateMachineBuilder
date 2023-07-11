@@ -1,1 +1,0 @@
-{"io_name":"RECORDER_Test_SM_master","io_type":"DataLogger","io_config_file_name":"FC2E1EBF-E9DB-4619-BE86-9831FA3EF0FF.opal","bus_in":{"name":"bus_RECORDER_Test_SM_master_in","type":"bus","items":[{"name":"SIGNAL_GROUP_1","type":"bus","items":[{"name":"log_input","type":"F64","num_point":"1"},{"name":"trigger_input","type":"F64","num_point":"1"}]}]}}

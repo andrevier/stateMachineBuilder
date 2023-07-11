@@ -1,15 +1,16 @@
 % Finite State Machine
-% Each state is defined by the number of state and a table with one column
-% for events and other indicating if it is active (1) or not (0).
+% This class simulates a finite state machine with three main elements:
+% statesArray: cell array with State class objects.
+% transitions: matrix nx3 with information on transitions between states
+% according to events;
+% eventsArray: An array with the number of all events that the machine can
+% possibly take as input.
 classdef StateMachine
     properties
         statesArray cell
         transitions int32
-        %numberOfStates double
         eventsArray int32
         currentState State
-        %stateNumber double
-        %stateIndex double
     end
 
     properties(Dependent)
@@ -22,12 +23,9 @@ classdef StateMachine
         function obj = StateMachine(statesArray, transitions, eventsArray)
             obj.statesArray = statesArray;
             obj.transitions = transitions;
-            %obj.numberOfStates = length(statesArray);
             obj.eventsArray = eventsArray;
 
             % Default state as the first.
-            %obj.stateNumber = statesArray{1}.number;
-            %obj.stateIndex = 1;
             obj.currentState = statesArray{1};
 
         end

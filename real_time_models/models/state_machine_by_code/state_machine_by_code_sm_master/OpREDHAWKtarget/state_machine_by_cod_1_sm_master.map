@@ -1,0 +1,40 @@
+[Parameter]
+0=state_machine_by_cod_1_sm_master/OpCCode_do_not_touch/S-Function1|Value|0|Scalar|0|1|1|0.0|Constant|23:7|
+1=state_machine_by_cod_1_sm_master/OpCCode_do_not_touch/S-Function|InitialCondition|0|Scalar|0|1|1|0.0|Memory|23:6|
+2=state_machine_by_cod_1_sm_master/SM_master/OpComm/Receive/S-Function|P1Size| |RVector|0|1|2|1.0|1.0|S-Function RECV_Param|1:36:21|
+3=state_machine_by_cod_1_sm_master/SM_master/OpComm/Receive/S-Function|P1|Data_width|Scalar|0|1|1|1.0|S-Function RECV_Param|1:36:21|
+4=state_machine_by_cod_1_sm_master/SM_master/OpComm/Receive/S-Function|P2Size| |RVector|0|1|2|1.0|1.0|S-Function RECV_Param|1:36:21|
+5=state_machine_by_cod_1_sm_master/SM_master/OpComm/Receive/S-Function|P2|InitialConditions|Scalar|0|1|1|3.0|S-Function RECV_Param|1:36:21|
+6=state_machine_by_cod_1_sm_master/SM_master/rtlab_send_subsystem/Subsystem1/Send1/S-Function|P1Size| |RVector|0|1|2|1.0|1.0|S-Function OP_SEND|1:47:31|
+7=state_machine_by_cod_1_sm_master/SM_master/rtlab_send_subsystem/Subsystem1/Send1/S-Function|P1|Acqu_group|Scalar|0|1|1|1.0|S-Function OP_SEND|1:47:31|
+nbParameters=8
+[Signal]
+0=state_machine_by_cod_1_sm_master/OpCCode_do_not_touch/S-Function|NULL|0|1|1|1|S|Memory|0|23:6|
+1=state_machine_by_cod_1_sm_master/OpCCode_do_not_touch/Sum|NULL|1|1|1|1|S|Sum|0|23:9|
+2=state_machine_by_cod_1_sm_master/SM_master/OpComm/Receive/S-Function|NULL|2|1|1|1|S|S-Function RECV_Param|0|1:36:21|
+3=state_machine_by_cod_1_sm_master/SM_master/MATLAB Function|outputState|3|1|1|1|S|Stateflow|0|1:15|
+nbSignals=4
+[ModelDataStructure]
+128=zCCacheNeedsReset
+22=derivCacheNeedsReset
+8=CTOutputIncnstWithState
+[dwork]
+0=stateMachine|StateMachine_state_machine_by_T|
+1=SFunction_PreviousInput|real_T|
+2=SFunction_IWORK|IWORK|
+[TimingStructure]
+101=simTimeStep
+103=tStart
+104=stepSize
+105=stepSize0
+107=stopRequestedFlag
+116=tArray
+130=timeOfLastOutput
+27=tFinal
+3=clockTick0
+4=clockTickH0
+66=offsetTimesArray
+72=perTaskSampleHitsArray
+90=sampleHitArray
+94=sampleTimesArray
+97=sampleTimeTaskIDArray

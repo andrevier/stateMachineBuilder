@@ -1,2 +1,0 @@
-    load_from_files_1_sm_master.c
-

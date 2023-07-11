@@ -1,3 +1,0 @@
-batch_events/SM_master/OpComm: 3 : 0.001000000000000 : 0.001000000000000 : 1 : 0 : [32,14,36]
-batch_events/SC_console/OpComm: 1 : 0.000000000000000 : 0.000000000000000 : 1 : 0 : [0]
-SampleTime=0.001000000000000

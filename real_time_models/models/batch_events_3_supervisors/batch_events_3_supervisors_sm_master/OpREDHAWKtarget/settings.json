@@ -1,0 +1,13 @@
+[
+  {"version":2},
+  {
+    "Settings":
+    {
+      "libraryPath":"/usr/opalrt/common/bin/",
+      "masterNodeHttpPort":2525,
+      "modulesPath":"",
+      "outputPath":"C:\\Users\\andrerangel\\OPAL-RT\\RT-LABv2023.1_Workspace\\Test_Stateflow\\models\\batch_events_3_supervisors",
+      "sessionNodesHttpPortFirst":25250
+    }
+  }
+]

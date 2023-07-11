@@ -1,0 +1,6 @@
+.MATLABDriveTag
+*.asv
+*.err
+slprj
+*.slxc
+*.autosave

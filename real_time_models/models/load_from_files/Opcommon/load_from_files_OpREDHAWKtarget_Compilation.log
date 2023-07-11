@@ -1,0 +1,206 @@
+
+-------------------- Starting compilation --------------------
+Start at : Sunday, July 09, 2023, 16:28:30
+
+The current RT-LAB version is:  v2023.1.0.533
+The current model is:           C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files.slx
+The current host platform is:   Windows
+The current target platform is: OPAL-RT Linux (x86-based)
+The current compiler is:        Automatic
+The target OS version is:       Red Hat 5.2 (2.6.29.6-opalrt-6.2.1)
+Separating model because it has never been built
+Preparing original model for code separation and generation...
+The current Matlab version is:  v9.11 (64 Bit) (R2021B)
+
+
+RtlabInfo not loaded
+Separating RT-LAB model (number of RT subsystems = 1, console detected).
+Separating RT-LAB subsystem 'SM_master'.
+Separating RT-LAB subsystem 'SC_console'.
+Repair completed.
+
+******IMPORTANT******
+Corrupted Stateflow charts are recovered and placed in a subsystem named
+'###Recovered Stateflow Charts###'. You can open it using
+   open_system('load_from_files_2_sc_console/###Recovered Stateflow Charts###');
+
+Model preparation and separation duration : 00h:02m:12s
+-------------------- Completed successfully --------------------
+
+Generating model because setting 'platform' has changed.
+
+-------------------- Generating C code --------------------
+
+Using System Target File (TLC file) : rtlab_rtmodel.tlc...
+
+Using Template Makefile (TMF file) : rtlab_rtmodel.tmf...
+
+-------------------- Generating load_from_files_1_sm_master C code --------------------
+Calling RTW Make Command make_rtw...
+### Starting build procedure for: load_from_files_1_sm_master
+### Generating code and artifacts to 'Model specific' folder structure
+### Generating code into build folder: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_1_sm_master_rtlab
+
+### Invoking Target Language Compiler on load_from_files_1_sm_master.rtw
+### Using System Target File: C:\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tlc
+        ### Loading TLC function libraries
+.......
+### Initial pass through model to cache user defined code
+.
+### Caching model source code
+.............................................................
+### Writing header file load_from_files_1_sm_master_types.h
+### Writing source file load_from_files_1_sm_master.c
+### Writing header file load_from_files_1_sm_master_private.h
+.
+### Writing header file load_from_files_1_sm_master.h
+### Writing header file rtwtypes.h
+### Writing header file builtin_typeid_types.h
+### Writing header file multiword_types.h
+### Writing header file zero_crossing_types.h
+### Writing header file rtmodel.h
+.
+### Writing source file load_from_files_1_sm_master_data.c
+### Writing header file rt_nonfinite.h
+### Writing source file rt_nonfinite.c
+### Writing header file rt_defines.h
+### Writing header file rtGetInf.h
+### Writing source file rtGetInf.c
+.
+### Writing header file rtGetNaN.h
+### Writing source file rtGetNaN.c
+### TLC code generation complete.
+Version 9.6 (R2021b) 14-May-2021
+### Creating model mapping file load_from_files_1_sm_master.map using opal_map_file.tlc
+..................................................### Saving binary information cache.
+.
+### Processing Template Makefile: C:\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tmf
+[Warning: Found legacy make variables |>SHARED_SRC<|, |>SHARED_SRC_DIR<| in the
+template makefile
+C:\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\rtlab_rtmodel.tmf. The
+variables are no longer required. You can remove the variables.] 
+### Created makefile C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_1_sm_master_rtlab\load_from_files_1_sm_master.mk
+### Successful completion of code generation for: load_from_files_1_sm_master
+### Simulink cache artifacts for 'load_from_files_1_sm_master' were created in 'C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_1_sm_master.slxc'.
+
+Build Summary
+
+Top model targets built:
+
+Model                        Action          Rebuild Reason                                    
+===============================================================================================
+load_from_files_1_sm_master  Code generated  Code generation information file does not exist.  
+
+1 of 1 models built (0 models already up to date)
+Build duration: 0h 0m 32.975s
+
+
+load_from_files_1_sm_master : Generating C code duration : 00h:00m:39s
+Generating C code total duration : 00h:00m:39s
+
+-------------------- Completed successfully --------------------
+
+-------------------- Creating the parameter database --------------------
+Parameter(s) with more than 1000 values will be disabled. 
+Use PARAM_VECTOR_SIZE_LIMIT environment variable to modify this limit.
+Parameter database creation duration: 00h:00m:00s
+-------------------- Parameter database created successfully --------------------
+
+-------------------- Creating the signals database --------------------
+Signal(s) with more than 1000 values will be disabled.
+Use SIGNALS_VECTOR_SIZE_LIMIT environment variable to modify this limit.
+
+Signal database creation duration: 00h:00m:00s
+-------------------- Signal database created successfully --------------------
+Generating simulation data...
+Data generated in 00h:00m:00s
+
+Closing Matlab... OK.
+Creating DataLoggers...
+ - SM_master... OK
+Updating dependencies... OK.
+Compiling model because setting 'platform' has changed.
+
+-------------------- Validating sources files --------------------------
+
+-------------------- Done validating source files ----------------------
+
+
+
+-------------------- Transferring the generated C code --------------------
+
+Connecting to 146.164.78.85 ... OK.
+Transferring in ascii mode C:\OPAL-RT\RT-LAB\2023.1\Simulink/rtw/c/common/linux32.opt ... OK.
+Transferring in ascii mode C:\OPAL-RT\RT-LAB\2023.1\Simulink/rtw/c/common/posix.rules ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\settings.json (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rtGet*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rtGet*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\load_from_files_1_sm_master.mk (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rt_*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rt_*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\zero_crossing_types*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\builtin_typeid_types*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\multiword_types*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rtwtypes.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\rtmodel.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\drive_load_from_files_1_sm_master*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\drive_load_from_files_1_sm_master*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\Opal*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\OpREDHAWKtarget\ssc_ml_fun*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\slprj\rtlab_rtmodel\_sharedutils\*.c (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\slprj\rtlab_rtmodel\_sharedutils\*.h (SM_master) ... OK.
+Transferring in ascii: C:\Users\andrerangel\OPAL-RT\RT-LABv2023.1_Workspace\Test_Stateflow\models\load_from_files\load_from_files_sm_master\slprj\rtlab_rtmodel\_sharedutils\*.mk (SM_master) ... OK.
+
+Transferring common RT-LAB files:
+Transferring in ascii: C:\OPAL-RT\RT-LAB\2023.1\Simulink\rtw\c\common\model_main.c (SM_master) ... OK.
+
+Transferring user extra files:
+
+File transfer duration : 00h:00m:00s
+-------------------- Completed successfully --------------------
+
+-------------------- Building the generated C code --------------------
+
+Executing script /usr/opalrt/v2023.1.0.533/common/python/rtlab/global/target_precompile.py ... done
+Removing relative includes from ./../load_from_files_sm_master/model_main.c ...
+Done
+Executing script /usr/opalrt/v2023.1.0.533/common/python/rtlab/global/target_subsys_precompile.py ... done
+
+-------------------- Building load_from_files_1_sm_master --------------------
+
+rm -f load_from_files_1_sm_master
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  load_from_files_1_sm_master.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  load_from_files_1_sm_master_data.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  load_from_files_1_sm_master_offsets.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  model_main.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  rtGetInf.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  rtGetNaN.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  /usr/matlab/v9.11/rtw/c/src/rt_logging.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  rt_nonfinite.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  /usr/matlab/v9.11/rtw/c/src/rt_printf.c
+opicc -c  -O2 -xHost -falign-functions=2 -diag-disable remark,warn,cpu-dispatch    -DUSE_RTMODEL -DMODEL=load_from_files_1_sm_master -DRT=RT -DNUMST=1 -DTID01EQ=0 -DNCSTATES=0 -DMT=0 -DTERMFCN=1 -DMULTITASKING=0 -D_SIMULINK -DRTLAB -DOP_MATLABR2021B	 -DMAT_FILE=1 -DCLASSIC_INTERFACE=1 -DONESTEPFCN=0 -DMULTI_INSTANCE_CODE=0 -DUNIX -I/usr/opalrt/externals/include   -I. -I/usr/matlab/v9.11/simulink/include -I/usr/matlab/v9.11/extern/include -I/usr/matlab/v9.11/rtw/c/src -I/usr/matlab/v9.11/rtw/c/src/matrixmath  -I/usr/matlab/v9.11/toolbox/simscape/include/drive -I/usr/matlab/v9.11/toolbox/simscape/include/mech -I/usr/matlab/v9.11/toolbox/simscape/include/foundation -I/usr/matlab/v9.11/toolbox/simscape/include/math -I/usr/matlab/v9.11/toolbox/simscape/include/lang -I/usr/matlab/v9.11/toolbox/simscape/include/external -I/usr/matlab/v9.11/toolbox/simscape/include/network_engine -I/usr/matlab/v9.11/toolbox/simscape/include/ne_sli -I/usr/matlab/v9.11/toolbox/dspblks/include -I/usr/matlab/v9.11/toolbox/simscape/include/compiler/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/sli/c -I/usr/matlab/v9.11/toolbox/simscape/include/engine/core/c -I/usr/matlab/v9.11/toolbox/simscape/include/utils -I/usr/matlab/v9.11/toolbox/simscape/include/pm_math -I/usr/opalrt/v2023.1.0.533/common/include -I/usr/opalrt/v2023.1.0.533/common/include_target -I/usr/opalrt/v2023.1.0.533/RT-LAB/include   -Ireferenced_model_includes -I_sharedutils  /usr/matlab/v9.11/rtw/c/src/rt_sim.c
+### Linking ...
+opicpc  -Wl,-rpath='/usr/opalrt/v2023.1.0.533/common/bin' -Wl,'-rpath=/usr/opalrt/v2023.1.0.533/common/bin/x32' -Wl,-rpath='/opt/intel/composerxe/lib/ia32' -Wl,-rpath='/opt/intel/Compiler/11.1/072/lib/ia32' -Wl,-rpath='/opt/intel/Compiler/11.1/056/lib/ia32' -diag-disable remark -L. -L/usr/opalrt/v2023.1.0.533/RT-LAB/lib -L/usr/opalrt/v2023.1.0.533/common/lib -L/usr/opalrt/v2023.1.0.533/common/lib/redhawk -L/usr/opalrt/v2023.1.0.533/common/bin -L/usr/opalrt/v2023.1.0.533/common/bin/x32 -L/usr/opalrt/externals/lib    -o load_from_files_1_sm_master load_from_files_1_sm_master.o load_from_files_1_sm_master_data.o load_from_files_1_sm_master_offsets.o model_main.o rtGetInf.o rtGetNaN.o rt_logging.o rt_nonfinite.o rt_printf.o rt_sim.o      -lOpalSimCore -lSimCoreLib -lSyncExchangerLib -lConnectionLib -lConnectionFactoryLib  -lOpIRTS_RT-2021b -lOpalSfunR2021B -lOpalR2021B -lBlocksRT-2021b -ldspR2021B -lsimscapeR2021B -lSimulinkRT-2021b -lOpalRTER2021B -lOpalCore -lOpalCore -lLicenseLib -lSimulink -lSimulationUtilities -lInfrastructure  -lNetwork -lKLU -lNumeric -lFramework -lSystem -lMatio -luuid -lpthread -lOpalSimCore -lSimCoreLib -lSyncExchangerLib -lConnectionLib -lConnectionFactoryLib -lOpalHttpLicenseRequest -lRapidJSON_Wrapper -lOpalUtils -lOpalAscii -lOpalComm -lOpalConfigFiles -lOpalCPU -lOpalEnv -lOpalFiles -lOpalList -lOpalMemLock -lOpalOSIdentification -lOpalPyTestUtils -lpthread -lm -ldl -lutil -lrt      /usr/matlab/v9.11/rtw/c/libsrc/rtwlibr_redhawk.a 
+chmod a+x load_from_files_1_sm_master
+### Created executable: load_from_files_1_sm_master
+
+load_from_files_1_sm_master : Building subsystem duration : 00h:00m:03s
+
+Building model total duration : 00h:00m:03s
+-------------------- Completed successfully --------------------
+
+-------------------- Transferring the built model --------------------
+Connecting to 146.164.78.85 ... OK.
+Transferring in binary mode /home/ws25/c/users/andrerangel/opal-rt/rt-labv2023.1_workspace/test_stateflow/models/load_from_files/load_from_files_sm_master/load_from_files_1_sm_master ... OK.
+Transferring in ascii mode /home/ws25/c/users/andrerangel/opal-rt/rt-labv2023.1_workspace/test_stateflow/models/load_from_files/compilation_target_report.xml ... OK.
+
+File transfer duration : 00h:00m:00s
+-------------------- Completed successfully --------------------
+
+End at : Sunday, July 09, 2023, 16:35:20
+
+Compilation duration : 00h:06m:50s
+
+Updating status for next build...OK

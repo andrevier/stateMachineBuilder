@@ -1,0 +1,16 @@
+[AcqGr1]
+1=batch_events_3_supervisors/SM_master/port1|outputState|1|1|1||
+2=batch_events_3_supervisors/SM_master/port2|outputState|2|1|1||
+3=batch_events_3_supervisors/SM_master/port3|outputState|3|1|1||
+nbsignals=3
+[SM_master]
+1=batch_events_3_supervisors/SC_console/port1(1)|signal1(1)|1|1|3|6|
+2=batch_events_3_supervisors/SC_console/port1(2)|signal1(2)|1|2|3|6|
+3=batch_events_3_supervisors/SC_console/port1(3)|signal1(3)|1|3|3|6|
+4=batch_events_3_supervisors/SC_console/port2(1)|signal1(1)|2|1|3|26|
+5=batch_events_3_supervisors/SC_console/port2(2)|signal1(2)|2|2|3|26|
+6=batch_events_3_supervisors/SC_console/port2(3)|signal1(3)|2|3|3|26|
+7=batch_events_3_supervisors/SC_console/port3(1)|signal1(1)|3|1|3|27|
+8=batch_events_3_supervisors/SC_console/port3(2)|signal1(2)|3|2|3|27|
+9=batch_events_3_supervisors/SC_console/port3(3)|signal1(3)|3|3|3|27|
+nbsignals=9
